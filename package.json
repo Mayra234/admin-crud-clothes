@@ -1,0 +1,10 @@
+{
+  "name": "admin-crud-clothes",
+  "version": "1.0.0",
+  "scripts": {
+    "server": "json-server --watch server/db.json --port 4000 --delay 1000"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.0"
+  }
+}
