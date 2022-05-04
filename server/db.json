@@ -1,0 +1,68 @@
+{
+  "companies": [
+    { "id": 1, "name": "Arturo Calle", "nit": "22112" },
+    { "id": 2, "name": "Nike", "nit": "22322" },
+    { "id": 3, "name": "Adidas", "nit": "12101" },
+    { "id": 4, "name": "Falabella", "nit": "23223" },
+    { "id": 5, "name": "Mango", "nit": "43321" },
+    { "id": 6, "name": "Prada", "nit": "12345" }
+  ],
+  "materials": [
+    { "id": 1, "name": "Algodón" },
+    { "id": 2, "name": "Seda" },
+    { "id": 3, "name": "Licra" },
+    { "id": 4, "name": "Lana" },
+    { "id": 5, "name": "Drill" },
+    { "id": 6, "name": "Paño" }
+  ],
+  "clothes": [
+    {
+      "id": 1,
+      "companyId": 3,
+      "materialId": 1,
+      "name": "Camisa dama",
+      "price": 2000,
+      "quantity": 100
+    },
+    {
+      "id": 2,
+      "companyId": 2,
+      "materialId": 1,
+      "name": "Pantalón vaquero",
+      "price": 3000,
+      "quantity": 200
+    },
+    {
+      "id": 3,
+      "companyId": 1,
+      "materialId": 2,
+      "name": "Blusa de flores",
+      "price": 2000,
+      "quantity": 100
+    },
+    {
+      "id": 4,
+      "companyId": 5,
+      "materialId": 2,
+      "name": "Ruana ranchera",
+      "price": 1000,
+      "quantity": 230
+    },
+    {
+      "id": 5,
+      "companyId": 6,
+      "materialId": 5,
+      "name": "Correa de vaquero",
+      "price": 2200,
+      "quantity": 400
+    },
+    {
+      "id": 6,
+      "companyId": 2,
+      "materialId": 5,
+      "name": "Medias sexys",
+      "price": 1000,
+      "quantity": 220
+    }
+  ]
+}
