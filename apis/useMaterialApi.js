@@ -2,7 +2,7 @@ const useMaterialApi = () => {
   const baseUrl = LOCAL_BASE_URL;
   //Enlistar
   const list = async () => {
-    const reponse = await fetch(`${baseURL}/materials`, { method: 'GET' });
+    const response = await fetch(`${baseURL}/materials`, { method: 'GET' });
     return response.json();
   };
   const create = async (data) => {
