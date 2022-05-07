@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.content-header {
+  background: violet;
+}
+
+.container {
+  background: fuchsia;
+}
+
+.content-footer {
+  background: salmon;
+}

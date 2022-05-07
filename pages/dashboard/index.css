@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'nunito';
+  src: url('../../fonts/nunito-sans/NunitoSans-Regular.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.content-menu {
+  padding: 20px;
+  font-size: 15px;
+  font-family: 'nunito';
+  background: #313a46;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-menu > div {
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-menu > div > a {
+  color: #8391a2;
+}
+
+.content-menu > div > a:hover {
+  color: #bccee4;
+}
+
+.content-menu > div > a:active {
+  color: white;
+}
+
+.container {
+  background: #dee2e6;
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-header > div:nth-child(2) {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-header > div > span:nth-child(1) {
+  position: absolute;
+  top: calc(38px * 0.5);
+  left: 15px;
+}
+
+.container-header > div > span:nth-child(1) > img {
+  height: 32px;
+  width: 32px;
+  vertical-align: middle;
+  border-radius: 70%;
+}
+
+.container-header > div > span:nth-child(2) > a {
+  text-decoration: none;
+  color: #98a6ad;
+  text-align: left;
+}
