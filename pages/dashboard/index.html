@@ -9,53 +9,63 @@
   </head>
   <body>
     <div class="content-menu">
+      <div></div>
       <div>
-        <a>
-          <i class="fa-solid fa-house"></i>
-          Dashboards
-        </a>
-      </div>
-      <div>
-        <a>
-          <i class="fa-solid fa-crown"></i>
-          Materiales
-        </a>
-      </div>
-      <div>
-        <a>
-          <i class="fa-solid fa-shirt"></i>
-          Prendas
-        </a>
-      </div>
-      <div>
-        <a>
-          <i class="fa-solid fa-people-group"></i>
-          Empleados
-        </a>
-      </div>
-      <div>
-        <a>
-          <i class="fa-solid fa-building"></i>
-          Compañías
-        </a>
+        <div>
+          <a>
+            <i class="fa-solid fa-house"></i>
+            <p>Dashboards</p>
+          </a>
+        </div>
+        <div>
+          <a>
+            <i class="fa-solid fa-crown"></i>
+            <p>Materiales</p>
+          </a>
+        </div>
+        <div>
+          <a>
+            <i class="fa-solid fa-shirt"></i>
+            <p>Prendas</p>
+          </a>
+        </div>
+        <div>
+          <a>
+            <i class="fa-solid fa-people-group"></i>
+            <p>Empleados</p>
+          </a>
+        </div>
+        <div>
+          <a>
+            <i class="fa-solid fa-building"></i>
+            <p>Compañías</p>
+          </a>
+        </div>
       </div>
     </div>
     <div class="container">
       <div class="container-header">
         <div>
-          <button type="button"><i class="fa-solid fa-bars"></i></button>
+          <button type="button" class="button-menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
         </div>
-        <div>
+        <div class="user">
           <span>
             <img src="../../img/hassam.jpg" alt="" />
           </span>
-          <span>
-            <a href="">Rogelio Pataquiva</a>
-          </span>
+          <div>
+            <span id="user-name">Rogelio Pataquiva</span>
+            <a><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+          </div>
         </div>
       </div>
-      <div></div>
-      <div></div>
+      <div class="container-fluid">
+        <h4 id="form-element">Formato de Elementos</h4>
+        <div>
+          <div id="card"></div>
+        </div>
+      </div>
     </div>
   </body>
   <script src="../../libs/fontawesome-free-6.1.1-web/js/all.min.js"></script>
