@@ -112,7 +112,12 @@ body {
   font-size: var(--font-size-one);
   background: var(--first-background);
   line-height: 1.5;
-  display: flex;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.logo {
+  padding: 30px;
 }
 
 .content-menu > div:nth-child(1) {
