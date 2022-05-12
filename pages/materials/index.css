@@ -16,8 +16,10 @@
   --third-color: #98a6ad;
   --fourth-color: #6c757d;
   --border-color: #f1f3fa;
+  --border-table: #edeff1;
   --font-size-one: 15px;
   --font-size-two: 24px;
+  --body: #fafbfe;
 }
 
 * {
@@ -149,6 +151,7 @@ body {
 }
 
 #form-element {
+  font-size: 30px;
   padding: 24px 0;
   color: var(--fourth-color);
 }
@@ -166,6 +169,94 @@ body {
   width: 100%;
   height: 700px;
 }
+
+.body-card {
+  padding: 24px;
+}
+
+.new-material-form {
+  color: var(--fourth-color);
+  padding: 20px;
+}
+
+.field {
+  margin-bottom: 24px;
+}
+
+.form-control {
+  width: 100%;
+  border: 1px solid var(--second-color);
+  padding: 7px 8px;
+  border-radius: 5px;
+  line-height: 1.5;
+  font-size: var(--font-size);
+  color: var(--third-color);
+  font-family: var(--my-font);
+}
+
+.form-control::placeholder {
+  color: var(--third-color);
+}
+
+.form-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  padding-left: 5px;
+}
+
+#submit {
+  color: #fff;
+  background: var(--button-background);
+  box-shadow: 0 2px 6px 0 rgb(114 124 245 / 50%);
+  text-align: center;
+  cursor: pointer;
+  background-color: #727cf5;
+  border-color: #727cf5;
+  border-top-color: rgb(114, 124, 245);
+  border-right-color: rgb(114, 124, 245);
+  border-bottom-color: rgb(114, 124, 245);
+  border-left-color: rgb(114, 124, 245);
+  border: 1px solid transparent;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.15rem;
+  font-family: inherit;
+}
+
+td {
+  padding: 10px;
+}
+
+.table-materials {
+  padding: 0 12px;
+  margin-top: 25px;
+}
+
+.table-materials > table {
+  background: transparent;
+  text-align: left;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  width: 100%;
+  color: var(--fourth-color);
+}
+
+.sorting {
+  padding: 10px 30px 10px 10px;
+}
+
+.table-materials > table > tbody {
+  color: var(--third-color);
+  border-top: 2px solid var(--border-table);
+  width: 100%;
+}
+
+.table-materials > table > tbody > tr:nth-child(odd) {
+  background: transparent;
+  background: var(--third-background);
+}
+
+/* Responsive */
 
 @media screen and (max-width: 971px) {
   .user > div {
