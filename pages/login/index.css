@@ -1,0 +1,240 @@
+@font-face {
+  font-family: 'nunito';
+  src: url('../../fonts/nunito/Nunito-VariableFont_wght.ttf');
+}
+
+:root {
+  --font: 'nunito';
+  --first-color: #6c757d;
+  --second-color: #dee2e6;
+  --third-color: #98a6ad;
+  --font-size: 0.9rem;
+  --first-background: rgba(241, 243, 250, 0.8);
+  --button-background: #727cf5;
+  --second-background: #eef2f7;
+  --box-shadow: 0px 0px 35px 0px rgba(154, 161, 171, 0.15);
+  --border-check: #dee2e6;
+  --rga: 114, 124, 245;
+  --opacity: 1;
+  --background-logo: #727cf5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--first-background);
+  background-image: url('img/fondo1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: var(--font);
+  color: var(--first-color);
+  font-size: var(--font-size);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.account-page {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 72px 0;
+}
+
+.content-page {
+  width: 100%;
+  margin: 0 69px;
+  padding: 0 12px;
+}
+
+.justify-content {
+  display: flex;
+  justify-content: center;
+}
+
+.col {
+  padding: 0 12px;
+}
+
+.container-page {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  max-height: 1.5;
+  border-radius: 5px;
+}
+
+.logo {
+  background-color: rgba(var(--rgb), var(--opacity));
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+  border-bottom: rgba(0, 0, 0, 0.125);
+  background: var(--background-logo);
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  width: 100%;
+}
+
+#card {
+  padding: 36px;
+  background: #fff;
+  height: 100%;
+}
+
+.header-login {
+  margin: 0 38px;
+}
+
+.header-login > h4 {
+  margin: 10px 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.header-login > p {
+  margin-bottom: 36px;
+  font-size: var(--font-size);
+  color: var(--third-color);
+}
+
+.field {
+  margin-bottom: 24px;
+}
+
+.form-control {
+  border: 1px solid var(--second-color);
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  font-size: var(--font-size);
+  color: var(--third-color);
+  font-family: inherit;
+}
+.control-email {
+  width: 100%;
+}
+
+.form-control::placeholder {
+  color: var(--third-color);
+}
+
+.form-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.watch-password {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.control-password {
+  flex: 1 1 auto;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.45rem 0.9rem;
+  background: var(--second-background);
+  border: 1px solid var(--second-color);
+  border-radius: 0.25rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.float {
+  float: right;
+  color: var(--third-color);
+  text-decoration: none;
+}
+
+.form-check > label {
+  padding-left: 5px;
+}
+
+#checkbox {
+  margin-top: 0.194em;
+  width: 1.112em;
+  height: 1.112em;
+  vertical-align: top;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: var(--border-check);
+}
+
+.text-center {
+  text-align: center;
+}
+
+#submit {
+  color: #fff;
+  background: var(--button-background);
+  box-shadow: 0 2px 6px 0 rgb(114 124 245 / 50%);
+  text-align: center;
+  cursor: pointer;
+  background-color: #727cf5;
+  border-color: #727cf5;
+  border-top-color: rgb(114, 124, 245);
+  border-right-color: rgb(114, 124, 245);
+  border-bottom-color: rgb(114, 124, 245);
+  border-left-color: rgb(114, 124, 245);
+  border: 1px solid transparent;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.15rem;
+  font-family: inherit;
+}
+
+.sign-up {
+  width: 100%;
+  padding: 0 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sign-up > p {
+  margin-bottom: 16px;
+}
+
+.sign-up > p > a {
+  margin-left: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sign-up > p > a > b {
+  font-weight: 700;
+  color: var(--third-color);
+}
+
+footer {
+  text-align: center;
+  padding: 19px 24px 20px;
+  position: absolute;
+  right: 417px;
+  bottom: -150px;
+  color: var(--third-color);
+}
