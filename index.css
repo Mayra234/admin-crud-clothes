@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'nunito';
+  src: url('./fonts/nunito/static/Nunito-SemiBold.ttf');
+}
+
+:root {
+  --my-font: 'nunito';
+  --color: #fff;
+  --first-background: #313a46;
+  --second-background: #8391a2;
+  --third-background: #dee2e6;
+  --fourth-background: #fafbfd;
+  --fifth-background: #eef2f7;
+  --first-color: #8391a2;
+  --second-color: #bccee4;
+  --third-color: #98a6ad;
+  --fourth-color: #6c757d;
+  --border-color: #f1f3fa;
+  --border-table: #edeff1;
+  --font-size-one: 15px;
+  --font-size-two: 24px;
+  --body: #fafbfe;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--my-font);
+}
