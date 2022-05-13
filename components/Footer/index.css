@@ -1,0 +1,8 @@
+footer {
+  color: var(--third-color);
+  border-top: 1px solid rgba(152, 166, 173, 0.2);
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

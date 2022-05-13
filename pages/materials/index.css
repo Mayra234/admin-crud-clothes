@@ -261,6 +261,15 @@ td {
   background: var(--third-background);
 }
 
+footer {
+  color: var(--third-color);
+  border-top: 1px solid rgba(152, 166, 173, 0.2);
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Responsive */
 
 @media screen and (max-width: 971px) {
@@ -278,6 +287,10 @@ td {
 @media screen and (max-width: 767px) {
   .container {
     grid-column: 1/-1;
+  }
+
+  .container-page {
+    display: block;
   }
 
   .button-menu {

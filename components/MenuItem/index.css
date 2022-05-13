@@ -1,0 +1,5 @@
+.content-menu > div:nth-child(2) > div > a {
+  color: var(--first-color);
+  display: flex;
+  justify-content: center;
+}

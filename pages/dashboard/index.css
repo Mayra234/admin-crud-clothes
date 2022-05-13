@@ -172,6 +172,15 @@ body {
   height: 700px;
 }
 
+footer {
+  color: var(--third-color);
+  border-top: 1px solid rgba(152, 166, 173, 0.2);
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 971px) {
   .user > div {
     display: none;
@@ -187,6 +196,10 @@ body {
 @media screen and (max-width: 767px) {
   .container {
     grid-column: 1/-1;
+  }
+
+  .container-page {
+    display: block;
   }
 
   .button-menu {
