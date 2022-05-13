@@ -50,7 +50,7 @@ body {
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  padding: 72px 0;
+  padding-top: 72px;
 }
 
 .content-page {
@@ -231,10 +231,16 @@ body {
 }
 
 footer {
-  text-align: center;
-  padding: 19px 24px 20px;
-  position: absolute;
-  right: 417px;
-  bottom: -150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 19px 24px 72px;
   color: var(--third-color);
+}
+
+footer > div {
+  text-align: center;
+  width: 100%;
+  max-width: 50%;
 }
