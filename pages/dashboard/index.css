@@ -198,6 +198,10 @@ footer {
     grid-column: 1/-1;
   }
 
+  .container-page {
+    display: block;
+  }
+
   .button-menu {
     display: block;
     border: none;
