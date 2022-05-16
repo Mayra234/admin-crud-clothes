@@ -15,5 +15,7 @@
     "babel-loader": "^8.2.5",
     "json-server": "^0.17.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "storybook": "^6.4.22"
+  }
 }

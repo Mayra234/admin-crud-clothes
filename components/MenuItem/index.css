@@ -1,5 +1,28 @@
-.content-menu > div:nth-child(2) > div > a {
+.menu-item {
+  line-height: 70px;
+}
+
+.menu-item > div {
+  margin: 25px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.menu-item > div > a {
   color: var(--first-color);
   display: flex;
   justify-content: center;
+}
+
+.menu-item > div > a:hover {
+  color: var(--second-color);
+}
+
+.menu-item > div > a:active {
+  color: var(--color);
+}
+
+.menu-item > div > a > p {
+  padding-left: 20px;
 }

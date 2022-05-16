@@ -7,11 +7,18 @@ export default {
 export const Overview = () => /*html*/ `
   <div>
     <div>
-      ${MenuItem({})}
+      ${MenuItem({
+        children: 'Dashboard',
+        property: 'fa-solid fa-house',
+      })}
     </div>
     <br />
     <div>
-      ${MenuItem({})}
+      ${MenuItem({
+        style: 'color: blue',
+        children: 'Materiales',
+        property: 'fa-solid fa-crown',
+      })}
     </div>
   </div>
 `;
