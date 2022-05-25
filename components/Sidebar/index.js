@@ -1,7 +1,7 @@
 import './index.css';
 
-export const Sidebar = ({ style = '' }) => {
+export const Sidebar = ({ style = '', children = '' } = {}) => {
   return /*html*/ `
-  <div class="content-menu" style="${style}"></div>
+  <div class="content-menu" style="${style}">${children}</div>
   `;
 };

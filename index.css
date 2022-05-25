@@ -1,6 +1,17 @@
+@import './assets/libs/fontawesome-free-6.1.1-web/css/all.css';
+
 @font-face {
   font-family: 'nunito';
-  src: url('./fonts/nunito/static/Nunito-SemiBold.ttf');
+  src: url('./assets/fonts/nunito/static/Nunito-SemiBold.ttf');
+}
+
+* {
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
 }
 
 :root {

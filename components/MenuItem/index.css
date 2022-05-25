@@ -1,9 +1,5 @@
-.menu-item {
-  line-height: 70px;
-}
-
 .menu-item > div {
-  margin: 25px;
+  margin: 17px;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -11,8 +7,9 @@
 
 .menu-item > div > a {
   color: var(--first-color);
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 27px auto;
+  align-items: center;
 }
 
 .menu-item > div > a:hover {
@@ -21,8 +18,4 @@
 
 .menu-item > div > a:active {
   color: var(--color);
-}
-
-.menu-item > div > a > p {
-  padding-left: 20px;
 }

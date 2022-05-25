@@ -8,16 +8,16 @@ export const Overview = () => /*html*/ `
   <div>
     <div>
       ${MenuItem({
-        children: 'Dashboard',
-        property: 'fa-solid fa-house',
+        icon: 'house',
+        text: 'Dashboard',
       })}
     </div>
     <br />
     <div>
       ${MenuItem({
         style: 'color: blue',
-        children: 'Materiales',
-        property: 'fa-solid fa-crown',
+        icon: 'crown',
+        text: 'Materiales',
       })}
     </div>
   </div>

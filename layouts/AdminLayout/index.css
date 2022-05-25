@@ -1,0 +1,19 @@
+.admin-layout {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(160, 253, 222);
+  grid-template-rows: auto 1fr;
+}
+
+.admin-layout > .main-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.admin-layout > .main-container > div:nth-child(1) {
+  background-color: aqua;
+}
+.admin-layout > .main-container > div:nth-child(2) {
+  background-color: yellow;
+}

@@ -1,12 +1,12 @@
 import './index.css';
 
-export const MenuItem = ({ style = '', children = '', property = '' }) => {
+export const MenuItem = ({ style = '', text = '', icon = '' }) => {
   return /*html*/ `
   <div class="menu-item" >
     <div>
       <a ${style}>
-        <i class="${property}"></i>
-        <p>${children}</p>
+        <i class="fa-solid fa-${icon}"></i>
+        <p>${text}</p>
       </a>
     </div>
   </div>
