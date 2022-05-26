@@ -1,0 +1,8 @@
+thead {
+  background: transparent;
+  text-align: left;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  width: 100%;
+  color: var(--fourth-color);
+}

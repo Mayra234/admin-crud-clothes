@@ -1,0 +1,9 @@
+body {
+  background-image: url('../../assets/images/fondo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: var(--font);
+  color: var(--first-color);
+  font-size: var(--font-size);
+}
