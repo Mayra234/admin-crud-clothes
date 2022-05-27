@@ -1,10 +1,11 @@
 import './index.css';
 import { LoginBox } from '../../components/LoginBox';
+import { LoginBackground } from '../../components/LoginBackground';
 
 export const AdminLayoutLogin = ({} = {}) => {
   return /*html */ `
     <div>
-        ${LoginBox({ children: 'mayra' })}
+        ${LoginBackground({ children: LoginBox({ children: 'mayra' }) })}
     </div>
     `;
 };
