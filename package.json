@@ -4,18 +4,21 @@
   "scripts": {
     "server": "json-server --watch server/db.json --port 4000 --delay 1000",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "start": "webpack serve"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.10",
     "@storybook/addon-actions": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-links": "^6.4.22",
     "@storybook/html": "^6.4.22",
-    "babel-loader": "^8.2.5",
-    "json-server": "^0.17.0"
-  },
-  "dependencies": {
-    "storybook": "^6.5.5"
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "json-server": "^0.17.0",
+    "storybook": "^6.5.5",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
   }
 }
