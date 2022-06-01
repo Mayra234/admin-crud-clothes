@@ -1,8 +1,8 @@
 import { TableRow } from '../TableRow';
 import './index.css';
 
-export const TableHeader = ({ style = '', children = '' } = {}) => {
+export const TableHeader = ({ style = '', text = '' } = {}) => {
   return /*html*/ `
-  <th style=${style}>${children}</th>
+  <th ${style}>${text}</th>
   `;
 };

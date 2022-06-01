@@ -17,6 +17,7 @@
 :root {
   --my-font: 'nunito';
   --color: #fff;
+  --button-background: #727cf5;
   --first-background: #313a46;
   --second-background: #8391a2;
   --third-background: #dee2e6;
@@ -27,6 +28,7 @@
   --third-color: #98a6ad;
   --fourth-color: #6c757d;
   --border-color: #f1f3fa;
+  --border-color-two: #464e59;
   --border-table: #edeff1;
   --font-size-one: 15px;
   --font-size-two: 24px;

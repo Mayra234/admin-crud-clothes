@@ -1,4 +1,6 @@
-tr:nth-child(odd) {
-  background: var(--third-background);
-  padding: 10px 30px 10px 10px;
+tr {
+  background: var(--button-background);
+  padding: 15px;
+  font-family: var(--my-font);
+  border-color: var(--border-color-two);
 }

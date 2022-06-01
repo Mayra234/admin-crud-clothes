@@ -3,5 +3,8 @@ table {
   margin-top: 6px;
   margin-bottom: 15px;
   width: 100%;
-  color: var(--fourth-color);
+  font-family: var(--my-font);
+  background: #313a46;
+  color: #fff;
+  border-color: #313a46;
 }

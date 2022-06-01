@@ -1,4 +1,3 @@
-import { TableHeader } from '../TableHeader';
 import { TableHead } from './index';
 
 export default {
@@ -9,7 +8,11 @@ export const Overview = () => /*html*/ `
   <div>
       <div>
           ${TableHead({
-            style: 'border: 1px solid red',
+            headers: [
+              { text: 'Nombre' },
+              { text: 'Apellido' },
+              { text: 'Edad' },
+            ],
           })}
       </div>
   </div>

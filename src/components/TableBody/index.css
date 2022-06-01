@@ -1,5 +1,4 @@
 tbody {
-  color: var(--third-color);
-  border-top: 2px solid var(--border-table);
+  color: #fff;
   width: 100%;
 }
