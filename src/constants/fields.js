@@ -1,6 +1,6 @@
 export const FIELDS = [
   { text: 'Mayra' },
-  { text: 'Diavanera' },
-  { text: '21' },
-  { text: 'Ecomoda' },
+  { text: 'Herrera' },
+  { text: 27 },
+  { text: 'Yamball' },
 ];

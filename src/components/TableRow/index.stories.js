@@ -7,11 +7,16 @@ export default {
 export const Overview = () => /*html*/ `
   <div>
     <div>
-      ${TableRow({ style: 'color: red', text: 'Hola' })}
+      ${TableRow({
+        style: 'background: pink',
+        fields: [{ text: 'Johana' }],
+      })}
     </div>
-    <br />
     <div>
-      ${TableRow({ style: 'background: pink', text: 'Mayra' })}
+      ${TableRow({
+        style: 'background: green',
+        fields: [{ text: 'Rocio' }],
+      })}
     </div>
   </div>
 `;

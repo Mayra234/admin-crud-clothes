@@ -7,7 +7,10 @@ export default {
 export const Overview = () => /*html*/ `
   <div>
     <div>
-      ${TableHead({ text: 'Hola', style: 'background: red' })}
+      ${TableHead({
+        style: 'background: red',
+        headers: [{ text: 'Nombre' }],
+      })}
     </div>
     <div>
       ${TableHead({ text: 'Mayra' })}

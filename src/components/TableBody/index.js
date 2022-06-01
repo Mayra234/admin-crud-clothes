@@ -1,7 +1,9 @@
 import './index.css';
-import { TableCell } from '../TableCell';
-export const TableBody = ({ children = '' }) => {
+import { TableRow } from '../TableRow';
+import { FIELDS } from '../../constants/fields';
+
+export const TableBody = () => {
   return /*html*/ `
-  <table><tbody >${children}</tbody></table>
+    <tbody >${TableRow({ fields: FIELDS })}</tbody>
   `;
 };

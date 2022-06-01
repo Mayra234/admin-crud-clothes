@@ -4,12 +4,4 @@ export default {
   title: 'Components/TableBody',
 };
 
-export const Overview = () => /*html*/ `
-  <div>
-    <div>
-      ${TableBody({
-        children: 'Mayra',
-      })}
-    </div>
-  </div>
-`;
+export const Overview = () => /*html*/ TableBody();

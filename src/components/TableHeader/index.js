@@ -1,10 +1,7 @@
-import { TableRow } from '../TableRow';
 import './index.css';
 
-export const TableHeader = ({ style = '', text = '' } = {}) => {
+export const TableHeader = ({ style = '', text = '' }) => {
   return /*html*/ `
-  <table>
-    <th style="${style}">${text}</th>
-  </table>
+    <th style="${style}">${text.toUpperCase()}</th>
   `;
 };
