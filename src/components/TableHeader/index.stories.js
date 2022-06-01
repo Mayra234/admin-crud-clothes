@@ -9,7 +9,6 @@ export const Overview = () => /*html*/ `
     <div>
       ${TableHeader({ text: 'number', style: 'background: red' })}
     </div>
-    <br />
     <div>
       ${TableHeader({ style: 'color: blue', text: 'text' })}
     </div>

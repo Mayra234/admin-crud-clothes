@@ -7,11 +7,11 @@ export default {
 export const Overview = () => /*html*/ `
   <div>
     <div>
-      ${TableRow({ style: 'background: red', children: 'Ale' })}
+      ${TableRow({ style: 'color: red', text: 'Hola' })}
     </div>
     <br />
     <div>
-      ${TableRow({ children: 'Mayra' })}
+      ${TableRow({ style: 'background: pink', text: 'Mayra' })}
     </div>
   </div>
 `;

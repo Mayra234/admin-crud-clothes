@@ -7,11 +7,9 @@ export default {
 export const Overview = () => /*html*/ `
   <div>
     <div>
-      ${TableBody({ style: 'color: yellow' })}
-    </div>
-    <br />
-    <div>
-      ${TableBody({ children: 'Diavanera' })}
+      ${TableBody({
+        children: 'Mayra',
+      })}
     </div>
   </div>
 `;

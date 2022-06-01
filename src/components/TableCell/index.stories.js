@@ -7,7 +7,10 @@ export default {
 export const Overview = () => /*html*/ `
   <div>
     <div>
-      ${TableCell({ children: 'Mayra' })}
+      ${TableCell({ text: 'Mayra' })}
+    </div>
+    <div>
+      ${TableCell({ style: 'background: red', text: 'Mayra' })}
     </div>
   </div>
 `;

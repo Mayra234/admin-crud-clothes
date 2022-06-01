@@ -1,7 +1,7 @@
 import './index.css';
-
-export const TableBody = ({ style = '', children = '' } = {}) => {
+import { TableCell } from '../TableCell';
+export const TableBody = ({ children = '' }) => {
   return /*html*/ `
-  <tbody style=${style}>${children}</tbody>
+  <table><tbody >${children}</tbody></table>
   `;
 };

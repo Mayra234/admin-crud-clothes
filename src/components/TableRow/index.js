@@ -1,7 +1,10 @@
+import { TableCell } from '../TableCell';
 import './index.css';
 
-export const TableRow = ({ style = '', children = '' } = {}) => {
+export const TableRow = ({ style = '', text = '' } = {}) => {
   return /*html*/ `
-  <tr  style="${style}" >${children}</tr>
+  <table>
+    <tr>${TableCell({ text, style })}</tr>
+  </table>
   `;
 };
