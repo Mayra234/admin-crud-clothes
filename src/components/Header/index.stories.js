@@ -7,11 +7,11 @@ export default {
 export const Overview = () => /*html*/ `
   <div>
     <div>
-      ${Header({ style: 'background-color: red' })}
+      ${Header({ style: 'background: red' })}
     </div>
     <br />
     <div>
-      ${Header({ style: 'background-color: silver' })}
+      ${Header({ style: 'background: silver' })}
     </div>
   </div>
 `;
