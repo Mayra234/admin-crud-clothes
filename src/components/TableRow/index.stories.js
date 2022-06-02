@@ -1,22 +1,18 @@
 import { TableRow } from './index';
+import { TableCell } from '../TableCell';
 
 export default {
   title: 'Components/TableRow',
 };
 
 export const Overview = () => /*html*/ `
-  <div>
-    <div>
-      ${TableRow({
-        style: 'background: pink',
-        fields: [{ text: 'Johana' }],
-      })}
-    </div>
-    <div>
-      ${TableRow({
-        style: 'background: green',
-        fields: [{ text: 'Rocio' }],
-      })}
-    </div>
-  </div>
+  <table style="border-spacing: 0px">
+    ${TableRow({
+      children: `
+        ${TableCell({ children: 'Angélica' })}
+        ${TableCell({ children: 'Mayra' })}
+        ${TableCell({ children: 'Mario' })}
+      `,
+    })}
+  </table>
 `;

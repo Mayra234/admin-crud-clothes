@@ -1,7 +1,7 @@
 import './index.css';
 
-export const TableHeader = ({ style = '', text = '' }) => {
+export const TableHeader = ({ style = '', children = '' }) => {
   return /*html*/ `
-    <th style="${style}">${text.toUpperCase()}</th>
+    <th class="th" style="${style}">${children}</th>
   `;
 };

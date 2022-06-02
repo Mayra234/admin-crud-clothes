@@ -1,4 +1,3 @@
-th {
-  color: var(--second-color);
-  padding: 0 25px;
+.th {
+  padding: 12px;
 }

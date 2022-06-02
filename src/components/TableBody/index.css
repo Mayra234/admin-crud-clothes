@@ -1,5 +1,3 @@
-tbody {
-  color: var(--third-color);
+.tbody {
   border-top: 2px solid var(--border-table);
-  width: 100%;
 }

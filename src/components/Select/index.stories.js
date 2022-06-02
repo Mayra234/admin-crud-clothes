@@ -4,11 +4,21 @@ export default {
   title: 'Components/Select',
 };
 
-export const Overview = () =>
-  /*html*/ Select({
-    items: [
+export const SelectWithLabel = () =>
+  Select({
+    label: 'Propiedad',
+    options: [
       { text: 'Seleccionar...' },
-      { value: 'casa', text: 'Casa' },
-      { value: 'comida', text: 'Comida' },
+      { value: 1, text: 'Casa' },
+      { value: 2, text: 'Comida' },
+    ],
+  });
+
+export const SelectWithoutLabel = () =>
+  Select({
+    options: [
+      { text: 'Seleccionar...' },
+      { value: 1, text: 'Casa' },
+      { value: 2, text: 'Comida' },
     ],
   });

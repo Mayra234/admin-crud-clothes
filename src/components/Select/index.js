@@ -1,11 +1,17 @@
 import { SelectOption } from '../SelectOption';
-import './index.css';
+import { Label } from '../Label';
 
-export const Select = ({ children = '', items = [] }) => {
+export const Select = ({
+  className = '',
+  label = '',
+  name = '',
+  options = [],
+}) => {
   return /*html*/ `
-  <select class='form-control'>
-    ${items
-      .map((item) => SelectOption({ text: item.text, value: item.value }))
+  ${label && Label({ children: label })}
+  <select class='form-control ${className}' name='${name}'>
+    ${options
+      .map((option) => SelectOption({ text: option.text, value: option.value }))
       .join('')}
   </select>
   `;

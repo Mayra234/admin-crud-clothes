@@ -1,7 +1,14 @@
-import './index.css';
+import { Label } from '../Label';
 
-export const Input = ({ type = '', children = '' } = {}) => {
+export const Input = ({
+  className = '',
+  type = '',
+  label = '',
+  value = '',
+  name = '',
+} = {}) => {
   return /*html*/ `
-  <input class='form-control' type="${type}" >
+    ${label && Label({ children: label })}
+    <input class='form-control ${className}' type="${type}" value="${value}" name="${name}">
   `;
 };

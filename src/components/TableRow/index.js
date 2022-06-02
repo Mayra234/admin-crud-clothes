@@ -1,10 +1,5 @@
-import { TableCell } from '../TableCell';
-import './index.css';
-
-export const TableRow = ({ style = '', fields = [] }) => {
+export const TableRow = ({ style = '', children = '' }) => {
   return /*html*/ `
-    <tr >${fields
-      .map((field) => TableCell({ style, text: field.text }))
-      .join('')}</tr>
+    <tr style=${style}>${children}</tr>
   `;
 };

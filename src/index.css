@@ -49,3 +49,28 @@ body {
 body {
   font-family: var(--my-font);
 }
+
+.form-control {
+  width: 100%;
+  border: 1px solid var(--second-color);
+  padding: 7px 8px;
+  border-radius: 5px;
+  font-size: var(--font-size);
+  color: var(--third-color);
+  font-family: var(--my-font);
+}
+
+.form-control::placeholder {
+  color: var(--third-color);
+}
+
+.form-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  padding-left: 5px;
+}
+
+table {
+  border-collapse: collapse;
+}

@@ -1,3 +1,5 @@
-td {
+.td {
   padding: 12px;
+  border-bottom: 1px solid #edeff1;
+  color: #6c757d;
 }

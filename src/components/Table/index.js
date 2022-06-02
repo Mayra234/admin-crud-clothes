@@ -1,13 +1,7 @@
-import { TableBody } from '../TableBody';
-import { TableHead } from '../TableHead';
-import { HEADERS } from '../../constants/headers';
 import './index.css';
 
-export const Table = () => {
+export const Table = ({ children = '' } = {}) => {
   return /*html */ `
-    <table>
-        ${TableHead({ headers: HEADERS })}
-        ${TableBody()}
-    </table>
-    `;
+    <table class="table">${children}</table>
+  `;
 };

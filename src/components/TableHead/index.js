@@ -1,10 +1,7 @@
-import { TableHeader } from '../TableHeader';
 import './index.css';
 
-export const TableHead = ({ style = '', headers = [] }) => {
+export const TableHead = ({ style = '', children = '' }) => {
   return /*html*/ `
-    <thead >${headers
-      .map((header) => TableHeader({ style, text: header.text }))
-      .join('')}</thead>
+    <thead class="thead" style='${style}'>${children}</thead>
   `;
 };

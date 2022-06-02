@@ -1,7 +1,7 @@
 import './index.css';
 
-export const TableCell = ({ style = '', text = '' }) => {
+export const TableCell = ({ style = '', children = '' }) => {
   return /*html*/ `
-    <td style="${style}">${text}</td>
+    <td class="td" style="${style}">${children}</td>
   `;
 };

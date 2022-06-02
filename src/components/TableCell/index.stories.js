@@ -5,12 +5,11 @@ export default {
 };
 
 export const Overview = () => /*html*/ `
-  <div>
-    <div>
-      ${TableCell({ style: 'background: green', text: 'Mayra' })}
-    </div>
-    <div>
-      ${TableCell({ style: 'background: red', text: 'Mayra' })}
-    </div>
-  </div>
+  <table style="border-spacing: 0px">
+    <tr>
+      ${TableCell({ children: 'Mayra' })}
+      ${TableCell({ children: 'Angélica' })}
+      ${TableCell({ children: 'Mario' })}
+    </tr>    
+  </table>
 `;

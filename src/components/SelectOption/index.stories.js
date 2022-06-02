@@ -5,11 +5,22 @@ export default {
 };
 
 export const Overview = () => /*html*/ `
-  <div>
-    <div>
-      ${SelectOption({
-        value: 'comida',
-        text: 'comida',
-      })}
-  </div>
+  <select>
+    ${SelectOption({
+      value: '',
+      text: 'Seleccionar',
+    })}
+    ${SelectOption({
+      value: 1,
+      text: 'Comida',
+    })}
+    ${SelectOption({
+      value: 2,
+      text: 'Bebida',
+    })}
+    ${SelectOption({
+      value: 3,
+      text: 'Postre',
+    })}
+  </select>
 `;

@@ -4,14 +4,6 @@ export default {
   title: 'Components/Input',
 };
 
-export const Overview = () => /*html*/ `
-  <div>
-    <div>
-      ${Input({ type: 'number' })}
-    </div>
-    <br />
-    <div>
-      ${Input({ type: 'text' })}
-    </div>
-  </div>
-`;
+export const NumberInput = () => Input({ label: 'Edad', type: 'number' });
+
+export const TextInput = () => Input({ label: 'Nombre', type: 'text' });

@@ -1,7 +1,5 @@
-import './index.css';
-
 export const Label = ({ children = '' } = {}) => {
   return /*html*/ `
-  <label class='form-label' >${children}</label>
+  <label class='form-label'>${children}</label>
   `;
 };

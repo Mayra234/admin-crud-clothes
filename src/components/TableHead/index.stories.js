@@ -5,15 +5,15 @@ export default {
 };
 
 export const Overview = () => /*html*/ `
-  <div>
-    <div>
-      ${TableHead({
-        style: 'background: red',
-        headers: [{ text: 'Nombre' }],
-      })}
-    </div>
-    <div>
-      ${TableHead({ text: 'Mayra' })}
-    </div>
-  </div>
+  <table>
+  ${TableHead({
+    children: /*html*/ `
+    <tr>
+      <th style="padding: 12px">Nombre</th>
+      <th style="padding: 12px">Edad</th>
+      <th style="padding: 12px">Teléfono</th>
+    </tr>
+  `,
+  })}
+  </table>
 `;
