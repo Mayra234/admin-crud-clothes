@@ -15,3 +15,20 @@ export const Overview = () => /*html*/ `
     </div>
   </div>
 `;
+
+export const ButtonWithOnClick = () => /*html*/ `
+  <div>
+    ${Button({
+      onClick: () => {
+        alert('Hola mundo 1');
+      },
+      children: 'Saludar 1',
+    })}
+    ${Button({
+      onClick: () => {
+        alert('Hola mundo 2');
+      },
+      children: 'Saludar 2',
+    })}
+  </div>
+`;

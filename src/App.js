@@ -1,3 +1,7 @@
 export const App = () => {
-  return /*html */ `<div>Hola mundo</div>`;
+  return /*html */ `
+    <div>
+      <button onclick={navigate}>Ruta XXX</button>
+    </div>
+  `;
 };

@@ -4,7 +4,6 @@
   "scripts": {
     "server": "json-server --watch server/db.json --port 4000 --delay 1000",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "start": "webpack serve"
   },
   "devDependencies": {
