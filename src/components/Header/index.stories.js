@@ -7,7 +7,7 @@ export default {
 export const Overview = () => /*html*/ `
   <div>
     <div>
-      ${Header({ style: 'background: red' })}
+      ${Header({ style: 'background: red', children: 'Ale' })}
     </div>
     <br />
     <div>

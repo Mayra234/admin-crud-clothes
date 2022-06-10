@@ -1,13 +1,13 @@
-import { ListItem } from './index';
+import { ListItems } from './index';
 
 export default {
-  title: 'Components/ListItem',
+  title: 'Components/ListItems',
 };
 
 export const Overview = () => /*html*/ `
   <div>
     <div>
-      ${ListItem({
+      ${ListItems({
         items: [
           { icon: 'home', text: 'Home' },
           { icon: 'crown', text: 'Materials' },
