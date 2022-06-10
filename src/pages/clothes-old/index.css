@@ -1,0 +1,351 @@
+@font-face {
+  font-family: 'nunito';
+  src: url('../../fonts/nunito/static/Nunito-SemiBold.ttf');
+}
+
+:root {
+  --my-font: 'nunito';
+  --color: #fff;
+  --first-background: #313a46;
+  --second-background: #8391a2;
+  --third-background: #dee2e6;
+  --fourth-background: #fafbfd;
+  --fifth-background: #eef2f7;
+  --first-color: #8391a2;
+  --second-color: #bccee4;
+  --third-color: #98a6ad;
+  --fourth-color: #6c757d;
+  --border-color: #f1f3fa;
+  --border-table: #edeff1;
+  --font-size-one: 15px;
+  --font-size-two: 24px;
+  --body: #fafbfe;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  font-family: var(--my-font);
+}
+
+.container {
+  background: var(--third-background);
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  background: var(--color);
+  min-height: 70px;
+}
+
+.button-menu {
+  color: var(--first-background);
+  height: 70px;
+  line-height: 70px;
+  width: 60px;
+  background-color: transparent;
+  font-size: var(--font-size-two);
+  position: relative;
+  margin-left: -24px;
+  display: none;
+  cursor: pointer;
+}
+
+.user {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-width: 32px;
+  margin: 0 10px;
+  padding: 20px 57px;
+  background: var(--fourth-background);
+  border: 1px solid var(--border-color);
+  border-width: 0 1px;
+}
+
+.user > span:nth-child(1) {
+  position: absolute;
+  left: 16px;
+}
+
+.user > span:nth-child(1) > img {
+  height: 32px;
+  width: 32px;
+  border-radius: 70%;
+}
+
+.user > div {
+  display: flex;
+  flex-direction: column;
+}
+
+#user-name {
+  color: var(--third-color);
+  text-align: left;
+}
+
+.user > div > a {
+  padding-top: 5px;
+  color: var(--third-color);
+  text-align: center;
+  cursor: pointer;
+}
+
+.container-page {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.content-menu {
+  font-size: var(--font-size-one);
+  background: var(--first-background);
+  line-height: 1.5;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.logo {
+  padding: 30px;
+}
+
+.content-menu > div:nth-child(1) {
+  line-height: 70px;
+}
+
+.content-menu > div:nth-child(2) > div {
+  margin: 25px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.content-menu > div:nth-child(2) > div > a {
+  color: var(--first-color);
+  display: flex;
+  justify-content: center;
+}
+
+.content-menu > div:nth-child(2) > div > a:hover {
+  color: var(--second-color);
+}
+
+.content-menu > div:nth-child(2) > div > a:active {
+  color: var(--color);
+}
+
+.content-menu > div:nth-child(2) > div > a > p {
+  padding-left: 20px;
+}
+
+.container-fluid {
+  padding: 0 12px;
+}
+
+#form-element {
+  font-size: 30px;
+  padding: 24px 0;
+  color: var(--fourth-color);
+}
+
+.container-fluid > div {
+  padding: 0 5px;
+  padding-bottom: 24px;
+}
+
+#card {
+  box-shadow: 0px 0px 35px 0px rgba(154, 161, 171, 0.15);
+  background: var(--color);
+  word-wrap: break-word;
+  border-radius: 0.25rem;
+  width: 100%;
+  height: 700px;
+}
+
+.body-card {
+  padding: 24px;
+}
+
+.new-clothes-form {
+  color: var(--fourth-color);
+  padding: 20px;
+}
+
+.justify-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.field {
+  padding: 0 10px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  border: 1px solid var(--second-color);
+  padding: 7px 8px;
+  border-radius: 5px;
+  line-height: 1.5;
+  font-size: var(--font-size);
+  color: var(--third-color);
+  font-family: var(--my-font);
+}
+
+.form-control::placeholder {
+  color: var(--third-color);
+}
+
+.form-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  padding-left: 5px;
+}
+
+#submit {
+  color: #fff;
+  background: var(--button-background);
+  box-shadow: 0 2px 6px 0 rgb(114 124 245 / 50%);
+  text-align: center;
+  cursor: pointer;
+  background-color: #727cf5;
+  border-color: #727cf5;
+  border-top-color: rgb(114, 124, 245);
+  border-right-color: rgb(114, 124, 245);
+  border-bottom-color: rgb(114, 124, 245);
+  border-left-color: rgb(114, 124, 245);
+  border: 1px solid transparent;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.15rem;
+  font-family: inherit;
+}
+
+td {
+  padding: 10px;
+}
+
+.table-clothes {
+  padding: 0 12px;
+  margin-top: 25px;
+}
+
+.table-clothes > table {
+  background: transparent;
+  text-align: left;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  width: 100%;
+  color: var(--fourth-color);
+}
+
+.sorting {
+  padding: 10px 30px 10px 10px;
+}
+
+.table-clothes > table > tbody {
+  color: var(--third-color);
+  border-top: 2px solid var(--border-table);
+  width: 100%;
+}
+
+.table-clothes > table > tbody > tr:nth-child(odd) {
+  background: transparent;
+  background: var(--third-background);
+}
+
+footer {
+  color: var(--third-color);
+  border-top: 1px solid rgba(152, 166, 173, 0.2);
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 971px) {
+  .user > div {
+    display: none;
+  }
+
+  .user > span:nth-child(1) {
+    position: absolute;
+    bottom: 0;
+    left: 43px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    grid-column: 1/-1;
+  }
+
+  .container-page {
+    display: block;
+  }
+
+  .button-menu {
+    display: block;
+    border: none;
+    color: var(--first-background);
+    height: 70px;
+    line-height: 70px;
+    width: 60px;
+    background-color: transparent;
+    font-size: var(--font-size-two);
+    position: relative;
+    margin-left: -24px;
+    cursor: pointer;
+  }
+
+  .content-menu {
+    font-size: var(--font-size-one);
+    font-family: var(--my-font);
+    background: var(--first-background);
+    line-height: 1.5;
+    position: fixed;
+    height: 100%;
+    max-width: 200px;
+    width: 100%;
+    top: 81px;
+    left: -100%;
+    transition: all 0.5s;
+  }
+
+  .content-menu > div:nth-child(2) > div {
+    margin: 50px 0;
+    line-height: 30px;
+  }
+
+  .content-menu > div:nth-child(2) > div > a:hover {
+    color: var(--second-color);
+  }
+
+  .content-menu > div:nth-child(2) > div > a:active {
+    color: var(--color);
+  }
+
+  .justify-form {
+    display: block;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+}

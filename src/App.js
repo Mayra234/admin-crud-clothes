@@ -1,3 +1,12 @@
+import { useNavigate } from './utils/useNavigate';
+import { mounted } from './utils/mounted';
+
 export const App = () => {
-  return /*html */ `<div>Hola mundo</div>`;
+  const { navigate } = useNavigate();
+
+  mounted(() => {
+    navigate('/clothes');
+  });
+
+  return '';
 };

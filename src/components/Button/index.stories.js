@@ -36,6 +36,29 @@ export const OnClickExample = () => /*html*/ `
         },
       })}
     </div>
+    <br /> 
+    <div>
+      ${Button({
+        children: 'Cambiar a negro',
+        style: 'background-color: green; color: white',
+        onClick: (event) => {
+          let color;
+          let text;
+
+          if (event.target.dataset.color === 'black') {
+            color = 'green';
+            text = 'Cambiar a negro';
+          } else {
+            color = 'black';
+            text = 'Cambiar a verde';
+          }
+
+          event.target.dataset.color = color;
+          event.target.style.backgroundColor = color;
+          event.target.innerText = text;
+        },
+      })}
+    </div>
   </div>
 `;
 

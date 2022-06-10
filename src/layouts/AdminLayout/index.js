@@ -6,7 +6,7 @@ import { ListItems } from '../../components/ListItems';
 import { Content } from '../../components/Content';
 import { SIDEBAR_MENU } from '../../constants/menus';
 
-export const AdminLayout = () => {
+export const AdminLayout = ({ children = '' } = {}) => {
   return /*html */ `<div class="admin-layout">
     <div>
       ${Header({ children: Navbar() })}
@@ -15,7 +15,7 @@ export const AdminLayout = () => {
       <div>
         ${Sidebar({ children: ListItems({ items: SIDEBAR_MENU }) })}
       </div>
-      <div>${Content({ children: `Hello world` })}</div>
+      <div>${Content({ children })}</div>
     </div>
   </div>`;
 };
