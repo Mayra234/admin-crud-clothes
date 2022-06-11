@@ -5,7 +5,7 @@ export const App = () => {
   const { navigate } = useNavigate();
 
   mounted(() => {
-    navigate('/clothes');
+    navigate('/dashboard');
   });
 
   return '';

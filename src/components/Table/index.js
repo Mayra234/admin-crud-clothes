@@ -1,7 +1,7 @@
 import './index.css';
 
-export const Table = ({ children = '' } = {}) => {
+export const Table = ({ children = '', style = '' } = {}) => {
   return /*html */ `
-    <table class="table">${children}</table>
+    <table style=${style} class="table">${children}</table>
   `;
 };

@@ -1,6 +1,7 @@
 import { Label } from '../Label';
 
 export const Input = ({
+  placeholder = '',
   className = '',
   type = '',
   label = '',
@@ -9,6 +10,6 @@ export const Input = ({
 } = {}) => {
   return /*html*/ `
     ${label && Label({ children: label })}
-    <input class='form-control ${className}' type="${type}" value="${value}" name="${name}">
+    <input placeholder=${placeholder} class='form-control ${className}' type="${type}" value="${value}" name="${name}">
   `;
 };

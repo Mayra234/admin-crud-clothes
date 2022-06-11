@@ -1,53 +1,54 @@
 import { Card } from '../../components/Card';
 import { Input } from '../../components/Input';
-import { Select } from '../../components/Select';
 import { Button } from '../../components/Button';
 import { Table } from '../../components/Table';
 import { TableBody } from '../../components/TableBody';
-import { TableCell } from '../../components/TableCell';
 import { TableHead } from '../../components/TableHead';
 import { TableHeader } from '../../components/TableHeader';
+import { TableCell } from '../../components/TableCell';
 import { TableRow } from '../../components/TableRow';
 
 import './index.css';
 
-export const Clothes = () => {
+export const Employees = () => {
   return /*html*/ `
-  <h4 class='form-element'>Prendas</h4>
+   <h4 class='form-element'>Empleados</h4>
     ${Card({
       children: /*html */ `
-      <form class="clothes-container">
+      <form class="employees-container">
         <div class='field'>
           ${Input({
-            label: 'Nombre',
+            label: 'Primer nombre',
             type: 'text',
-            placeholder: 'Digita el nombre de la prenda',
-          })}
-        </div>
-        <div class='field'>
-          ${Select({
-            label: 'Seleccione una compañía',
-            options: [],
-          })}
-        </div>
-         <div class='field'>
-          ${Select({
-            label: 'Seleccione un material',
-            options: [],
+            placeholder: 'Digita tu primer nombre',
           })}
         </div>
         <div class='field'>
           ${Input({
-            label: 'Precio',
-            type: 'number',
-            placeholder: 'Digita el valor de la prenda',
+            label: 'Segundo nombre',
+            type: 'text',
+            placeholder: 'Digita tu segundo nombre',
           })}
         </div>
         <div class='field'>
           ${Input({
-            label: 'Cantidad',
-            type: 'number',
-            placeholder: 'Digita la cantidad de prendas',
+            label: 'Apellido',
+            type: 'text',
+            placeholder: 'Digita tu apellido',
+          })}
+        </div>
+        <div class='field'>
+          ${Input({
+            label: 'Email',
+            type: 'email',
+            placeholder: 'Digita tu email',
+          })}
+        </div>
+        <div class='field'>
+          ${Input({
+            label: 'Contraseña',
+            type: 'password',
+            placeholder: 'Digita tu contraseña',
           })}
         </div>
       </form>
@@ -60,12 +61,14 @@ export const Clothes = () => {
               ${TableRow({
                 children: `
                 ${TableHeader({ toUpperCase: true, children: 'id' })}
-                ${TableHeader({ toUpperCase: true, children: 'compañia' })}
-                ${TableHeader({ toUpperCase: true, children: 'material' })}
-                ${TableHeader({ toUpperCase: true, children: 'nombre' })}
-                ${TableHeader({ toUpperCase: true, children: 'precio' })}
-                ${TableHeader({ toUpperCase: true, children: 'cantidad' })}
-                ${TableHeader({ toUpperCase: true, children: 'acciones' })}
+                ${TableHeader({ toUpperCase: true, children: 'primer nombre' })}
+                ${TableHeader({
+                  toUpperCase: true,
+                  children: 'segundo nombre',
+                })}
+                ${TableHeader({ toUpperCase: true, children: 'apellido' })}
+                ${TableHeader({ toUpperCase: true, children: 'email' })}
+                ${TableHeader({ toUpperCase: true, children: 'Acciones' })}
               `,
               })}
             `,
@@ -80,8 +83,6 @@ export const Clothes = () => {
               ${TableCell({ children: 'Vacio' })}
               ${TableCell({ children: 'Vacio' })}
               ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-
             `,
             })}
           `,
