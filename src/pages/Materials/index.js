@@ -13,7 +13,7 @@ export const Materials = () => {
    <h4 class='form-element'>Materiales</h4>
     ${Card({
       children: /*html */ `
-      <form class="materials-container">
+      <form class="materials-form">
         <div class='field'>
           ${Input({
             label: 'Nombre',
@@ -23,7 +23,7 @@ export const Materials = () => {
         </div>
       </form>
       ${Button({ children: 'Crear', style: 'margin-left: 12px' })}
-      <div class='content-table'>
+      <div class='container-table'>
         ${Table({
           children: `
           ${TableHead({

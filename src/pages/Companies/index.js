@@ -15,7 +15,7 @@ export const Companies = () => {
    <h4 class='form-element'>Compañías</h4>
     ${Card({
       children: /*html */ `
-      <form class="companies-container">
+      <form class="companies-form">
         <div class='field'>
           ${Input({
             label: 'Nombre',
@@ -30,9 +30,11 @@ export const Companies = () => {
             placeholder: 'Digita Nit de la compañia',
           })}
         </div>
+        <div>
+          ${Button({ children: 'Crear', style: 'margin-left: 12px' })}
+        </div>
       </form>
-      ${Button({ children: 'Crear', style: 'margin-left: 12px' })}
-      <div class='content-table'>
+      <div class='container-table'>
         ${Table({
           children: `
           ${TableHead({

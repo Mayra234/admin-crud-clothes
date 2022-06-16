@@ -1,5 +1,10 @@
-.clothes-container {
+.clothes-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
+}
+
+.field-button {
+  display: flex;
+  align-items: center;
 }

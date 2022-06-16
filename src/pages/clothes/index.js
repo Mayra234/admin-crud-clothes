@@ -16,7 +16,7 @@ export const Clothes = () => {
   <h4 class='form-element'>Prendas</h4>
     ${Card({
       children: /*html */ `
-      <form class="clothes-container">
+      <form class="clothes-form">
         <div class='field'>
           ${Input({
             label: 'Nombre',
@@ -50,9 +50,11 @@ export const Clothes = () => {
             placeholder: 'Digita la cantidad de prendas',
           })}
         </div>
-      </form>
+        <div class="field-button">
       ${Button({ children: 'Crear', style: 'margin-left: 12px' })}
-      <div class='content-table'>
+      </div>
+      </form>
+      <div class='container-table'>
         ${Table({
           children: `
           ${TableHead({

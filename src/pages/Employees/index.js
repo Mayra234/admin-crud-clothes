@@ -15,7 +15,7 @@ export const Employees = () => {
    <h4 class='form-element'>Empleados</h4>
     ${Card({
       children: /*html */ `
-      <form class="employees-container">
+      <form class="employees-form">
         <div class='field'>
           ${Input({
             label: 'Primer nombre',
@@ -53,7 +53,7 @@ export const Employees = () => {
         </div>
       </form>
       ${Button({ children: 'Crear', style: 'margin-left: 12px' })}
-      <div class='content-table'>
+      <div class='container-table'>
         ${Table({
           children: `
           ${TableHead({
