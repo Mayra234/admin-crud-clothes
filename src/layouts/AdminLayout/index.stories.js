@@ -4,4 +4,7 @@ export default {
   title: 'Layouts/AdminLayout',
 };
 
-export const Overview = () => /*html*/ AdminLayout();
+export const Overview = () =>
+  /*html*/ AdminLayout({
+    children: /*html */ `<div style='height: 500px; background: pink'></div>`,
+  });

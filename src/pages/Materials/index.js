@@ -21,8 +21,8 @@ export const Materials = () => {
             placeholder: 'Digita el nombre del material',
           })}
         </div>
-      </form>
-      ${Button({ children: 'Crear', style: 'margin-left: 12px' })}
+        <div>${Button({ children: 'Crear', style: 'margin-left: 12px' })}</div>
+      </form>     
       <div class='container-table'>
         ${Table({
           children: `
