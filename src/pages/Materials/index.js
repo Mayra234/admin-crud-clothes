@@ -19,6 +19,7 @@ export const Materials = () => {
             label: 'Nombre',
             type: 'text',
             placeholder: 'Digita el nombre del material',
+            name: 'name',
           })}
         </div>
         <div>${Button({ children: 'Crear', style: 'margin-left: 12px' })}</div>
