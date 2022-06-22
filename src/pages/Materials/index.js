@@ -9,6 +9,16 @@ import { TableCell } from '../../components/TableCell';
 import { TableRow } from '../../components/TableRow';
 
 export const Materials = () => {
+  const formData = {};
+  const setFormData = (event) => {
+    const { name, value } = event.target;
+    formData[name] = value;
+  };
+
+  const submit = () => {
+    alert(JSON.stringify(formData));
+  };
+
   return /*html*/ `
    <h4 class='form-element'>Materiales</h4>
     ${Card({
@@ -20,9 +30,14 @@ export const Materials = () => {
             type: 'text',
             placeholder: 'Digita el nombre del material',
             name: 'name',
+            onInput: setFormData,
           })}
         </div>
-        <div>${Button({ children: 'Crear', style: 'margin-left: 12px' })}</div>
+        <div>${Button({
+          children: 'Crear',
+          style: 'margin-left: 12px',
+          onClick: submit,
+        })}</div>
       </form>     
       <div class='container-table'>
         ${Table({

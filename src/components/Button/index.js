@@ -8,6 +8,7 @@ export const Button = ({
   children = '',
   onClick = '',
   onMouseEnter = '',
+  type = 'button',
 } = {}) => {
   const _id = id || useId();
 
@@ -17,5 +18,5 @@ export const Button = ({
     onMouseEnter && button.addEventListener('mouseenter', onMouseEnter);
   });
 
-  return /*html*/ `<button id="${_id}" class="button" style="${style}">${children}</button>`;
+  return /*html*/ `<button id="${_id}" class="button" style="${style}" type="${type}">${children}</button>`;
 };
