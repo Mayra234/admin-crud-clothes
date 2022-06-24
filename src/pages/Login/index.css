@@ -1,0 +1,90 @@
+.watch-password {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.control-password {
+  flex: 1 1 auto;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.45rem 0.9rem;
+  background: var(--second-background);
+  border: 1px solid var(--second-color);
+  border-radius: 0.25rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.float {
+  float: right;
+  color: var(--third-color);
+  text-decoration: none;
+}
+
+.form-check > label {
+  padding-left: 5px;
+}
+
+#checkbox {
+  margin-top: 0.194em;
+  width: 1.112em;
+  height: 1.112em;
+  vertical-align: top;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: var(--border-check);
+}
+
+.text-center {
+  text-align: center;
+}
+
+#submit {
+  color: #fff;
+  background: var(--button-background);
+  box-shadow: 0 2px 6px 0 rgb(114 124 245 / 50%);
+  text-align: center;
+  cursor: pointer;
+  background-color: #727cf5;
+  border-color: #727cf5;
+  border-top-color: rgb(114, 124, 245);
+  border-right-color: rgb(114, 124, 245);
+  border-bottom-color: rgb(114, 124, 245);
+  border-left-color: rgb(114, 124, 245);
+  border: 1px solid transparent;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.15rem;
+  font-family: inherit;
+}
+
+.sign-up {
+  width: 100%;
+  padding: 0 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sign-up > p {
+  margin-bottom: 16px;
+}
+
+.sign-up > p > a {
+  margin-left: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sign-up > p > a > b {
+  font-weight: 700;
+  color: var(--third-color);
+}

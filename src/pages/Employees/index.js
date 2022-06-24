@@ -11,6 +11,16 @@ import { TableRow } from '../../components/TableRow';
 import './index.css';
 
 export const Employees = () => {
+  const formData = {};
+  const setFormData = (event) => {
+    const { name, value } = event.target;
+    formData[name] = value;
+  };
+
+  const submit = () => {
+    alert(JSON.stringify(formData));
+  };
+
   return /*html*/ `
    <h4 class='form-element'>Empleados</h4>
     ${Card({
@@ -21,6 +31,8 @@ export const Employees = () => {
             label: 'Primer nombre',
             type: 'text',
             placeholder: 'Digita tu primer nombre',
+            name: 'firstName',
+            onInput: setFormData,
           })}
         </div>
         <div class='field'>
@@ -28,6 +40,8 @@ export const Employees = () => {
             label: 'Segundo nombre',
             type: 'text',
             placeholder: 'Digita tu segundo nombre',
+            name: 'secondName',
+            onInput: setFormData,
           })}
         </div>
         <div class='field'>
@@ -35,6 +49,8 @@ export const Employees = () => {
             label: 'Apellido',
             type: 'text',
             placeholder: 'Digita tu apellido',
+            name: 'lastName',
+            onInput: setFormData,
           })}
         </div>
         <div class='field'>
@@ -42,6 +58,8 @@ export const Employees = () => {
             label: 'Email',
             type: 'email',
             placeholder: 'Digita tu email',
+            name: 'email',
+            onInput: setFormData,
           })}
         </div>
         <div class='field'>
@@ -49,10 +67,16 @@ export const Employees = () => {
             label: 'Contraseña',
             type: 'password',
             placeholder: 'Digita tu contraseña',
+            name: 'password',
+            onInput: setFormData,
           })}
         </div>
       </form>
-      ${Button({ children: 'Crear', style: 'margin-left: 12px' })}
+      ${Button({
+        children: 'Crear',
+        style: 'margin-left: 12px',
+        onClick: submit,
+      })}
       <div class='container-table'>
         ${Table({
           children: `

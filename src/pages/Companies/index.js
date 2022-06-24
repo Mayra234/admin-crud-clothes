@@ -11,6 +11,16 @@ import { TableRow } from '../../components/TableRow';
 import './index.css';
 
 export const Companies = () => {
+  const formData = {};
+  const setFormData = (event) => {
+    const { name, value } = event.target;
+    formData[name] = value;
+  };
+
+  const submit = () => {
+    alert(JSON.stringify(formData));
+  };
+
   return /*html*/ `
    <h4 class='form-element'>Compañías</h4>
     ${Card({
@@ -21,6 +31,8 @@ export const Companies = () => {
             label: 'Nombre',
             type: 'text',
             placeholder: 'Digita el nombre de la compañia',
+            name: 'name',
+            onInput: setFormData,
           })}
         </div>
         <div class='field'>
@@ -28,10 +40,16 @@ export const Companies = () => {
             label: 'Nit',
             type: 'number',
             placeholder: 'Digita Nit de la compañia',
+            name: 'identification',
+            onInput: setFormData,
           })}
         </div>
         <div>
-          ${Button({ children: 'Crear', style: 'margin-left: 12px' })}
+          ${Button({
+            children: 'Crear',
+            style: 'margin-left: 12px',
+            onClick: submit,
+          })}
         </div>
       </form>
       <div class='container-table'>

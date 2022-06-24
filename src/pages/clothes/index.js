@@ -12,6 +12,16 @@ import { TableRow } from '../../components/TableRow';
 import './index.css';
 
 export const Clothes = () => {
+  const formData = {};
+  const setFormData = (event) => {
+    const { name, value } = event.target;
+    formData[name] = value;
+  };
+
+  const submit = () => {
+    alert(JSON.stringify(formData));
+  };
+
   return /*html*/ `
   <h4 class='form-element'>Prendas</h4>
     ${Card({
@@ -22,18 +32,24 @@ export const Clothes = () => {
             label: 'Nombre',
             type: 'text',
             placeholder: 'Digita el nombre de la prenda',
+            name: 'name',
+            onInput: setFormData,
           })}
         </div>
         <div class='field'>
           ${Select({
             label: 'Seleccione una compañía',
             options: [],
+            name: 'company',
+            onInput: setFormData,
           })}
         </div>
          <div class='field'>
           ${Select({
             label: 'Seleccione un material',
             options: [],
+            name: 'material',
+            onInput: setFormData,
           })}
         </div>
         <div class='field'>
@@ -41,6 +57,8 @@ export const Clothes = () => {
             label: 'Precio',
             type: 'number',
             placeholder: 'Digita el valor de la prenda',
+            name: 'price',
+            onInput: setFormData,
           })}
         </div>
         <div class='field'>
@@ -48,10 +66,16 @@ export const Clothes = () => {
             label: 'Cantidad',
             type: 'number',
             placeholder: 'Digita la cantidad de prendas',
+            name: 'quantity',
+            onInput: setFormData,
           })}
         </div>
         <div class="field-button">
-      ${Button({ children: 'Crear', style: 'margin-left: 12px' })}
+      ${Button({
+        children: 'Crear',
+        style: 'margin-left: 12px',
+        onClick: submit,
+      })}
       </div>
       </form>
       <div class='container-table'>
