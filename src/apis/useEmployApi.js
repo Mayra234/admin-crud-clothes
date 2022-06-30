@@ -1,13 +1,13 @@
-const useCompanyApi = () => {
+const useEmployApi = () => {
   const baseUrl = LOCAL_BASE_URL;
 
   const list = async () => {
-    const response = await fetch(`${baseUrl}/companies`, { method: 'GET' });
+    const response = await fetch(`${baseUrl}/employees`, { method: 'GET' });
     return response.json();
   };
 
   const create = async (data) => {
-    const response = await fetch(`${baseUrl}/companies`, {
+    const response = await fetch(`${baseUrl}/employees`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -16,14 +16,14 @@ const useCompanyApi = () => {
   };
 
   const read = async (id) => {
-    const response = await fetch(`${baseUrl}/companies/${id}`, {
+    const response = await fetch(`${baseUrl}/employees/${id}`, {
       method: 'GET',
     });
     return response.json();
   };
 
   const update = async (id, data) => {
-    const response = await fetch(`${baseUrl}/companies/${id}`, {
+    const response = await fetch(`${baseUrl}/employees/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -32,7 +32,7 @@ const useCompanyApi = () => {
   };
 
   const remove = async (id) => {
-    const response = await fetch(`${baseUrl}/companies/${id}`, {
+    const response = await fetch(`${baseUrl}/employees/${id}`, {
       method: 'DELETE',
     });
     return response.json();
