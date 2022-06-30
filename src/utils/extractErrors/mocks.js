@@ -1,4 +1,4 @@
-export const error1 = {
+export const errors1 = {
   value: {},
   errors: [
     'name is a required field',
@@ -66,4 +66,31 @@ export const error1 = {
   ],
   name: 'ValidationError',
   message: '5 errors occurred',
+};
+
+export const errors2 = {
+  value: {},
+  errors: ['name is a required field', 'nit is a required field'],
+  inner: [
+    {
+      path: 'name',
+      type: 'required',
+      errors: ['name is a required field'],
+      params: { path: 'name' },
+      inner: [],
+      name: 'ValidationError',
+      message: 'name is a required field',
+    },
+    {
+      path: 'nit',
+      type: 'required',
+      errors: ['nit is a required field'],
+      params: { path: 'nit' },
+      inner: [],
+      name: 'ValidationError',
+      message: 'nit is a required field',
+    },
+  ],
+  name: 'ValidationError',
+  message: '2 errors occurred',
 };

@@ -8,6 +8,7 @@ import { TableHeader } from '../../components/TableHeader';
 import { TableCell } from '../../components/TableCell';
 import { TableRow } from '../../components/TableRow';
 import { companySchema } from '../../schemas/companySchema';
+import { extractErrors } from '../../utils/extractErrors';
 import './index.css';
 
 export const Companies = () => {
@@ -22,10 +23,16 @@ export const Companies = () => {
       await companySchema.validate(formData, { abortEarly: false });
       alert(JSON.stringify(formData));
     } catch (error) {
-      alert(JSON.stringify(error));
+      const errors = extractErrors(error);
+      for (let key in errors) {
+        const field = document.querySelector(`[name="${key}"]`);
+        field.style.border = '1px solid red';
+        const errorMessage = document.createElement('small');
+        errorMessage.innerText = errors[key];
+        errorMessage.style.color = 'red';
+        field.after(errorMessage);
+      }
     }
-
-    console.log(error);
   };
 
   return /*html*/ `

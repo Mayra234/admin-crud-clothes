@@ -8,6 +8,7 @@ import { TableHeader } from '../../components/TableHeader';
 import { TableCell } from '../../components/TableCell';
 import { TableRow } from '../../components/TableRow';
 import { materialSchema } from '../../schemas/materialSchema';
+import { extractErrors } from '../../utils/extractErrors';
 
 export const Materials = () => {
   const formData = {};
@@ -18,10 +19,11 @@ export const Materials = () => {
 
   const submit = async () => {
     try {
-      await materialSchema.validate(formData);
+      await materialSchema.validate(formData, { abortEarly: false });
       alert(JSON.stringify(formData));
     } catch (error) {
-      alert(JSON.stringify(error));
+      const errors = extractErrors(error);
+      console.log(errors);
     }
   };
 

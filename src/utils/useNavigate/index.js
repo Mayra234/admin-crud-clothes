@@ -1,4 +1,4 @@
-import { routes } from '../routes';
+import { routes } from '../../routes';
 
 export const useNavigate = () => {
   const root = document.getElementById('root');
