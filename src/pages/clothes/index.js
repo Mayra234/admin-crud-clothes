@@ -8,8 +8,8 @@ import { TableCell } from '../../components/TableCell';
 import { TableHead } from '../../components/TableHead';
 import { TableHeader } from '../../components/TableHeader';
 import { TableRow } from '../../components/TableRow';
-
 import './index.css';
+import { clotheSchema } from '../../schemas/clotheSchema';
 
 export const Clothes = () => {
   const formData = {};
@@ -18,8 +18,13 @@ export const Clothes = () => {
     formData[name] = value;
   };
 
-  const submit = () => {
-    alert(JSON.stringify(formData));
+  const submit = async () => {
+    try {
+      await clotheSchema.validate(formData, { abortEarly: false });
+      alert(JSON.stringify(formData));
+    } catch (error) {
+      alert(JSON.stringify(error));
+    }
   };
 
   return /*html*/ `
@@ -40,7 +45,7 @@ export const Clothes = () => {
           ${Select({
             label: 'Seleccione una compañía',
             options: [],
-            name: 'company',
+            name: 'companyId',
             onInput: setFormData,
           })}
         </div>
@@ -48,7 +53,7 @@ export const Clothes = () => {
           ${Select({
             label: 'Seleccione un material',
             options: [],
-            name: 'material',
+            name: 'materialId',
             onInput: setFormData,
           })}
         </div>

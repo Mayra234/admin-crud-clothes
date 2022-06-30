@@ -7,6 +7,7 @@ import { TableHead } from '../../components/TableHead';
 import { TableHeader } from '../../components/TableHeader';
 import { TableCell } from '../../components/TableCell';
 import { TableRow } from '../../components/TableRow';
+import { employeeSchema } from '../../schemas/employeeSchema';
 
 import './index.css';
 
@@ -17,8 +18,13 @@ export const Employees = () => {
     formData[name] = value;
   };
 
-  const submit = () => {
-    alert(JSON.stringify(formData));
+  const submit = async () => {
+    try {
+      await employeeSchema.validate(formData);
+      alert(JSON.stringify(formData));
+    } catch (error) {
+      alert(JSON.stringify(error));
+    }
   };
 
   return /*html*/ `

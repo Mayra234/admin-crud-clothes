@@ -7,7 +7,7 @@ import { TableHead } from '../../components/TableHead';
 import { TableHeader } from '../../components/TableHeader';
 import { TableCell } from '../../components/TableCell';
 import { TableRow } from '../../components/TableRow';
-
+import { companySchema } from '../../schemas/companySchema';
 import './index.css';
 
 export const Companies = () => {
@@ -17,8 +17,15 @@ export const Companies = () => {
     formData[name] = value;
   };
 
-  const submit = () => {
-    alert(JSON.stringify(formData));
+  const submit = async () => {
+    try {
+      await companySchema.validate(formData, { abortEarly: false });
+      alert(JSON.stringify(formData));
+    } catch (error) {
+      alert(JSON.stringify(error));
+    }
+
+    console.log(error);
   };
 
   return /*html*/ `
@@ -40,7 +47,7 @@ export const Companies = () => {
             label: 'Nit',
             type: 'number',
             placeholder: 'Digita Nit de la compañia',
-            name: 'identification',
+            name: 'nit',
             onInput: setFormData,
           })}
         </div>

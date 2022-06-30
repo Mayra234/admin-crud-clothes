@@ -7,6 +7,7 @@ import { TableHead } from '../../components/TableHead';
 import { TableHeader } from '../../components/TableHeader';
 import { TableCell } from '../../components/TableCell';
 import { TableRow } from '../../components/TableRow';
+import { materialSchema } from '../../schemas/materialSchema';
 
 export const Materials = () => {
   const formData = {};
@@ -15,8 +16,13 @@ export const Materials = () => {
     formData[name] = value;
   };
 
-  const submit = () => {
-    alert(JSON.stringify(formData));
+  const submit = async () => {
+    try {
+      await materialSchema.validate(formData);
+      alert(JSON.stringify(formData));
+    } catch (error) {
+      alert(JSON.stringify(error));
+    }
   };
 
   return /*html*/ `
