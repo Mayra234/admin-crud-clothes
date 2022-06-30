@@ -1,10 +1,11 @@
 const useClotheApi = () => {
   const baseUrl = LOCAL_BASE_URL;
-  //Enlistar
+
   const list = async () => {
     const response = await fetch(`${baseURL}/clothes`, { method: 'GET' });
     return response.json();
   };
+
   const create = async (data) => {
     const response = await fetch(`${baseUrl}/clothes`, {
       method: 'POST',
@@ -13,14 +14,14 @@ const useClotheApi = () => {
     });
     return response.json();
   };
-  //Leer (GET)
+
   const read = async (id) => {
     const response = await fetch(`${baseUrl}/clothes/${id}`, {
       method: 'GET',
     });
     return response.json();
   };
-  // Actualizar (PUT)
+
   const update = async (id, data) => {
     const response = await fetch(`${baseUrl}/clothes/${id}`, {
       method: 'PUT',
@@ -29,7 +30,7 @@ const useClotheApi = () => {
     });
     return response.json();
   };
-  //Eliminar (DELETE)
+
   const remove = async (id) => {
     const response = await fetch(`${baseUrl}/clothes/${id}`, {
       method: 'DELETE',
