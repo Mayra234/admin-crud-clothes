@@ -1,3 +1,4 @@
+import './index.css';
 import { Card } from '../../components/Card';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
@@ -9,29 +10,35 @@ import { TableCell } from '../../components/TableCell';
 import { TableRow } from '../../components/TableRow';
 import { companySchema } from '../../schemas/companySchema';
 import { extractErrors } from '../../utils/extractErrors';
-import './index.css';
+import { cleanError } from '../../utils/cleanError';
+import { printError } from '../../utils/printError';
+import { printErrors } from '../../utils/printErrors';
+import { cleanErrors } from '../../utils/cleanErrors';
 
 export const Companies = () => {
   const formData = {};
-  const setFormData = (event) => {
+  const setFormData = async (event) => {
     const { name, value } = event.target;
     formData[name] = value;
+
+    try {
+      cleanError(name);
+      await companySchema.validateAt(name, formData);
+    } catch (error) {
+      printError(name, error.message);
+    }
   };
 
   const submit = async () => {
+    const form = document.getElementById('companies-form');
+
     try {
+      cleanErrors(formData);
       await companySchema.validate(formData, { abortEarly: false });
       alert(JSON.stringify(formData));
+      form.reset();
     } catch (error) {
-      const errors = extractErrors(error);
-      for (let key in errors) {
-        const field = document.querySelector(`[name="${key}"]`);
-        field.style.border = '1px solid red';
-        const errorMessage = document.createElement('small');
-        errorMessage.innerText = errors[key];
-        errorMessage.style.color = 'red';
-        field.after(errorMessage);
-      }
+      printErrors(extractErrors(error));
     }
   };
 
@@ -39,7 +46,7 @@ export const Companies = () => {
    <h4 class='form-element'>Compañías</h4>
     ${Card({
       children: /*html */ `
-      <form class="companies-form">
+      <form id="companies-form">
         <div class='field'>
           ${Input({
             label: 'Nombre',

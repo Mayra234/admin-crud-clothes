@@ -92,3 +92,7 @@ table {
   width: 100%;
   margin-top: 25px;
 }
+
+.is-invalid {
+  border: 1px solid red;
+}
