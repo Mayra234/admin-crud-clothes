@@ -9,21 +9,34 @@ import { TableCell } from '../../components/TableCell';
 import { TableRow } from '../../components/TableRow';
 import { materialSchema } from '../../schemas/materialSchema';
 import { extractErrors } from '../../utils/extractErrors';
+import { cleanError } from '../../utils/cleanError';
+import { printError } from '../../utils/printError';
+import { cleanErrors } from '../../utils/cleanErrors';
+import { printErrors } from '../../utils/printErrors';
 
 export const Materials = () => {
   const formData = {};
-  const setFormData = (event) => {
+  const setFormData = async (event) => {
     const { name, value } = event.target;
     formData[name] = value;
+
+    try {
+      cleanError(name);
+      await materialSchema.validateAt(name, formData);
+    } catch (error) {
+      printError(name, error.message);
+    }
   };
 
   const submit = async () => {
+    const form = document.getElementById('materials-form');
     try {
+      cleanErrors(formData);
       await materialSchema.validate(formData, { abortEarly: false });
       alert(JSON.stringify(formData));
+      form.reset();
     } catch (error) {
-      const errors = extractErrors(error);
-      console.log(errors);
+      printErrors(extractErrors(error));
     }
   };
 
@@ -31,7 +44,7 @@ export const Materials = () => {
    <h4 class='form-element'>Materiales</h4>
     ${Card({
       children: /*html */ `
-      <form class="materials-form">
+      <form id="materials-form">
         <div class='field'>
           ${Input({
             label: 'Nombre',

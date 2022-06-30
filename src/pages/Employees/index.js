@@ -8,22 +8,36 @@ import { TableHeader } from '../../components/TableHeader';
 import { TableCell } from '../../components/TableCell';
 import { TableRow } from '../../components/TableRow';
 import { employeeSchema } from '../../schemas/employeeSchema';
-
 import './index.css';
+import { cleanError } from '../../utils/cleanError';
+import { cleanErrors } from '../../utils/cleanErrors';
+import { printError } from '../../utils/printError';
+import { printErrors } from '../../utils/printErrors';
+import { extractErrors } from '../../utils/extractErrors';
 
 export const Employees = () => {
   const formData = {};
-  const setFormData = (event) => {
+  const setFormData = async (event) => {
     const { name, value } = event.target;
     formData[name] = value;
+
+    try {
+      cleanError(name);
+      await employeeSchema.validateAt(name, formData);
+    } catch (error) {
+      printError(name, error.message);
+    }
   };
 
   const submit = async () => {
+    const form = document.getElementById('employees-form');
     try {
-      await employeeSchema.validate(formData);
+      cleanErrors(formData);
+      await employeeSchema.validate(formData, { abortEarly: false });
       alert(JSON.stringify(formData));
+      form.reset();
     } catch (error) {
-      alert(JSON.stringify(error));
+      printErrors(extractErrors(error));
     }
   };
 
@@ -31,7 +45,7 @@ export const Employees = () => {
    <h4 class='form-element'>Empleados</h4>
     ${Card({
       children: /*html */ `
-      <form class="employees-form">
+      <form id="employees-form">
         <div class='field'>
           ${Input({
             label: 'Primer nombre',

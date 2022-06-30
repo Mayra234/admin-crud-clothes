@@ -10,20 +10,35 @@ import { TableHeader } from '../../components/TableHeader';
 import { TableRow } from '../../components/TableRow';
 import './index.css';
 import { clotheSchema } from '../../schemas/clotheSchema';
+import { cleanError } from '../../utils/cleanError';
+import { printError } from '../../utils/printError';
+import { cleanErrors } from '../../utils/cleanErrors';
+import { printErrors } from '../../utils/printErrors';
+import { extractErrors } from '../../utils/extractErrors';
 
 export const Clothes = () => {
   const formData = {};
-  const setFormData = (event) => {
+  const setFormData = async (event) => {
     const { name, value } = event.target;
     formData[name] = value;
+
+    try {
+      cleanError(name);
+      await clotheSchema.validateAt(name, formData);
+    } catch (error) {
+      printError(name, error.message);
+    }
   };
 
   const submit = async () => {
+    const form = document.getElementById('clothes-form');
     try {
+      cleanErrors(formData);
       await clotheSchema.validate(formData, { abortEarly: false });
       alert(JSON.stringify(formData));
+      form.reset();
     } catch (error) {
-      alert(JSON.stringify(error));
+      printErrors(extractErrors(error));
     }
   };
 
@@ -31,7 +46,7 @@ export const Clothes = () => {
   <h4 class='form-element'>Prendas</h4>
     ${Card({
       children: /*html */ `
-      <form class="clothes-form">
+      <form id="clothes-form">
         <div class='field'>
           ${Input({
             label: 'Nombre',
