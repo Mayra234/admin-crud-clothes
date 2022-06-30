@@ -1,4 +1,4 @@
-const useEmployApi = () => {
+const useEmployeeApi = () => {
   const baseUrl = LOCAL_BASE_URL;
 
   const list = async () => {
