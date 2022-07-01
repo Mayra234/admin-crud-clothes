@@ -1,7 +1,10 @@
+import { useId } from '../../utils/useId';
 import './index.css';
 
-export const Table = ({ children = '', style = '' } = {}) => {
+export const Table = ({ id = '', children = '', style = '' } = {}) => {
+  const _id = id || useId();
+
   return /*html */ `
-    <table style=${style} class="table">${children}</table>
+    <table id="${_id}" style="${style}" class="table">${children}</table>
   `;
 };

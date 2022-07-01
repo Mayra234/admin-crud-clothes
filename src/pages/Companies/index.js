@@ -2,21 +2,22 @@ import './index.css';
 import { Card } from '../../components/Card';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
-import { Table } from '../../components/Table';
-import { TableBody } from '../../components/TableBody';
-import { TableHead } from '../../components/TableHead';
-import { TableHeader } from '../../components/TableHeader';
-import { TableCell } from '../../components/TableCell';
-import { TableRow } from '../../components/TableRow';
 import { companySchema } from '../../schemas/companySchema';
 import { extractErrors } from '../../utils/extractErrors';
 import { cleanError } from '../../utils/cleanError';
 import { printError } from '../../utils/printError';
 import { printErrors } from '../../utils/printErrors';
 import { cleanErrors } from '../../utils/cleanErrors';
+import { DataTable } from '../../components/DataTable';
+import { useRef } from '../../utils/useRef';
+import { mounted } from '../../utils/mounted';
+import { useCompanyApi } from '../../apis/useCompanyApi';
 
 export const Companies = () => {
   const formData = {};
+  const dataTableRef = useRef();
+  const companyApi = useCompanyApi();
+
   const setFormData = async (event) => {
     const { name, value } = event.target;
     formData[name] = value;
@@ -41,6 +42,15 @@ export const Companies = () => {
       printErrors(extractErrors(error));
     }
   };
+
+  const listCompanies = async () => {
+    const companies = await companyApi.list();
+    dataTableRef.current.refreshTable(companies);
+  };
+
+  mounted(() => {
+    listCompanies();
+  });
 
   return /*html*/ `
    <h4 class='form-element'>Compañías</h4>
@@ -74,34 +84,7 @@ export const Companies = () => {
         </div>
       </form>
       <div class='container-table'>
-        ${Table({
-          children: `
-          ${TableHead({
-            children: `
-              ${TableRow({
-                children: `
-                ${TableHeader({ toUpperCase: true, children: 'id' })}
-                ${TableHeader({ toUpperCase: true, children: 'nombre' })}
-                ${TableHeader({ toUpperCase: true, children: 'nit' })}
-                ${TableHeader({ toUpperCase: true, children: 'Acciones' })}
-              `,
-              })}
-            `,
-          })}
-          ${TableBody({
-            children: `
-            ${TableRow({
-              children: `
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-            `,
-            })}
-          `,
-          })}
-       `,
-        })}
+        ${DataTable({ ref: dataTableRef })}
       </div> 
     `,
     })}

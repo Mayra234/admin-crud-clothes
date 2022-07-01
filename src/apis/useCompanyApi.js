@@ -1,4 +1,6 @@
-const useCompanyApi = () => {
+import { LOCAL_BASE_URL } from '../constants/baseUrls';
+
+export const useCompanyApi = () => {
   const baseUrl = LOCAL_BASE_URL;
 
   const list = async () => {
