@@ -52,6 +52,14 @@ export const Overview = () => {
             lastName: 'Diavanera',
           },
         ],
+        actions: (id) => /*html */ `
+          ${Button({
+            children: 'Editar',
+            onClick: () => {
+              fillForm(employees.find((item) => item.id === id));
+            },
+          })}
+        `,
       })}
     </div>
   </div>
