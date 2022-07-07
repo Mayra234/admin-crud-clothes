@@ -7,7 +7,12 @@ import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { TableHeader } from '../TableHeader';
 
-export const DataTable = ({ id = '', ref = undefined, data = [] } = {}) => {
+export const DataTable = ({
+  id = '',
+  ref = undefined,
+  data = [],
+  columnsNames = {},
+} = {}) => {
   const _id = id || useId();
   let dataTable;
   let records;

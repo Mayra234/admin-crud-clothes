@@ -1,19 +1,61 @@
 {
   "companies": [
-    { "id": 1, "name": "Arturo Calle", "nit": "22112" },
-    { "id": 2, "name": "Nike", "nit": "22322" },
-    { "id": 3, "name": "Adidas", "nit": "12101" },
-    { "id": 4, "name": "Falabella", "nit": "23223" },
-    { "id": 5, "name": "Mango", "nit": "43321" },
-    { "id": 6, "name": "Prada", "nit": "12345" }
+    {
+      "id": 1,
+      "name": "Arturo Calle",
+      "nit": "22112"
+    },
+    {
+      "id": 2,
+      "name": "Nike",
+      "nit": "22322"
+    },
+    {
+      "id": 3,
+      "name": "Adidas",
+      "nit": "12101"
+    },
+    {
+      "id": 4,
+      "name": "Falabella",
+      "nit": "23223"
+    },
+    {
+      "id": 5,
+      "name": "Mango",
+      "nit": "43321"
+    },
+    {
+      "id": 6,
+      "name": "Prada",
+      "nit": "12345"
+    }
   ],
   "materials": [
-    { "id": 1, "name": "Algodón" },
-    { "id": 2, "name": "Seda" },
-    { "id": 3, "name": "Licra" },
-    { "id": 4, "name": "Lana" },
-    { "id": 5, "name": "Drill" },
-    { "id": 6, "name": "Paño" }
+    {
+      "id": 1,
+      "name": "Algodón"
+    },
+    {
+      "id": 2,
+      "name": "Seda"
+    },
+    {
+      "id": 3,
+      "name": "Licra"
+    },
+    {
+      "id": 4,
+      "name": "Lana"
+    },
+    {
+      "id": 5,
+      "name": "Drill"
+    },
+    {
+      "id": 6,
+      "name": "Paño"
+    }
   ],
   "clothes": [
     {
@@ -55,14 +97,24 @@
       "name": "Correa de vaquero",
       "price": 2200,
       "quantity": 400
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "Mayra",
+      "secondName": "Alejandra",
+      "lastName": "Diavanera",
+      "email": "aleja@gmail.com",
+      "password": "mayra123"
     },
     {
-      "id": 6,
-      "companyId": 2,
-      "materialId": 5,
-      "name": "Medias sexys",
-      "price": 1000,
-      "quantity": 220
+      "id": 2,
+      "firstName": "María",
+      "secondName": "Angélica",
+      "lastName": "Diavanera",
+      "email": "mdiavanera@gmail.com",
+      "password": "maria123"
     }
   ]
 }

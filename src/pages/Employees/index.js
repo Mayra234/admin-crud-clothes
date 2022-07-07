@@ -1,12 +1,6 @@
 import { Card } from '../../components/Card';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
-import { Table } from '../../components/Table';
-import { TableBody } from '../../components/TableBody';
-import { TableHead } from '../../components/TableHead';
-import { TableHeader } from '../../components/TableHeader';
-import { TableCell } from '../../components/TableCell';
-import { TableRow } from '../../components/TableRow';
 import { employeeSchema } from '../../schemas/employeeSchema';
 import './index.css';
 import { cleanError } from '../../utils/cleanError';
@@ -14,9 +8,16 @@ import { cleanErrors } from '../../utils/cleanErrors';
 import { printError } from '../../utils/printError';
 import { printErrors } from '../../utils/printErrors';
 import { extractErrors } from '../../utils/extractErrors';
+import { useRef } from '../../utils/useRef';
+import { mounted } from '../../utils/mounted';
+import { useEmployeeApi } from '../../apis/useEmployeeApi';
+import { DataTable } from '../../components/DataTable';
 
 export const Employees = () => {
   const formData = {};
+  const dataTableRef = useRef();
+  const employeeApi = useEmployeeApi();
+
   const setFormData = async (event) => {
     const { name, value } = event.target;
     formData[name] = value;
@@ -40,6 +41,15 @@ export const Employees = () => {
       printErrors(extractErrors(error));
     }
   };
+
+  const listEmployees = async () => {
+    const employees = await employeeApi.list();
+    dataTableRef.current.refreshTable(employees);
+  };
+
+  mounted(() => {
+    listEmployees();
+  });
 
   return /*html*/ `
    <h4 class='form-element'>Empleados</h4>
@@ -98,41 +108,7 @@ export const Employees = () => {
         onClick: submit,
       })}
       <div class='container-table'>
-        ${Table({
-          children: `
-          ${TableHead({
-            children: `
-              ${TableRow({
-                children: `
-                ${TableHeader({ toUpperCase: true, children: 'id' })}
-                ${TableHeader({ toUpperCase: true, children: 'primer nombre' })}
-                ${TableHeader({
-                  toUpperCase: true,
-                  children: 'segundo nombre',
-                })}
-                ${TableHeader({ toUpperCase: true, children: 'apellido' })}
-                ${TableHeader({ toUpperCase: true, children: 'email' })}
-                ${TableHeader({ toUpperCase: true, children: 'Acciones' })}
-              `,
-              })}
-            `,
-          })}
-          ${TableBody({
-            children: `
-            ${TableRow({
-              children: `
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-            `,
-            })}
-          `,
-          })}
-       `,
-        })}
+        ${DataTable({ ref: dataTableRef })}
       </div> 
     `,
     })}
