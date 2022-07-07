@@ -15,7 +15,8 @@ import { useClotheApi } from '../../apis/useClotheApi';
 import { mounted } from '../../utils/mounted';
 
 export const Clothes = () => {
-  const formData = {};
+  let formData = {};
+  let clothes;
   const dataTableRef = useRef();
   const useClothe = useClotheApi();
 
@@ -35,16 +36,21 @@ export const Clothes = () => {
     const form = document.getElementById('clothes-form');
     try {
       cleanErrors(formData);
+      formData.companyId = 1;
+      formData.materialId = 1;
       await clotheSchema.validate(formData, { abortEarly: false });
-      alert(JSON.stringify(formData));
+      const clothe = await useClothe.create(formData);
+      clothes.push(clothe);
+      dataTableRef.current.refreshTable(clothes);
       form.reset();
+      formData = {};
     } catch (error) {
       printErrors(extractErrors(error));
     }
   };
 
   const listClothes = async () => {
-    const clothes = await useClothe.list();
+    clothes = await useClothe.list();
     dataTableRef.current.refreshTable(clothes);
   };
 

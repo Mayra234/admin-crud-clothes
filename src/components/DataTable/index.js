@@ -25,9 +25,14 @@ export const DataTable = ({
 
     data = initialData || data;
 
-    for (let item in data) {
-      records.headers = Object.keys(data[item]);
-      records.body.push(Object.values(data[item]));
+    for (let item of data) {
+      if (!records.headers) records.headers = Object.keys(item);
+
+      const row = [];
+      records.headers.forEach((header) => {
+        row.push(item[header]);
+      });
+      records.body.push(row);
     }
   };
 

@@ -13,7 +13,8 @@ import { mounted } from '../../utils/mounted';
 import { DataTable } from '../../components/DataTable';
 
 export const Materials = () => {
-  const formData = {};
+  let formData = {};
+  let materials;
   const dataTableRef = useRef();
   const useMaterial = useMaterialApi();
 
@@ -34,15 +35,18 @@ export const Materials = () => {
     try {
       cleanErrors(formData);
       await materialSchema.validate(formData, { abortEarly: false });
-      alert(JSON.stringify(formData));
+      const material = await useMaterial.create(formData);
+      materials.push(material);
+      dataTableRef.current.refreshTable(materials);
       form.reset();
+      formData = {};
     } catch (error) {
       printErrors(extractErrors(error));
     }
   };
 
   const listMaterials = async () => {
-    const materials = await useMaterial.list();
+    materials = await useMaterial.list();
     dataTableRef.current.refreshTable(materials);
   };
 

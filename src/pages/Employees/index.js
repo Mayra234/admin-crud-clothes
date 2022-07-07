@@ -14,7 +14,8 @@ import { useEmployeeApi } from '../../apis/useEmployeeApi';
 import { DataTable } from '../../components/DataTable';
 
 export const Employees = () => {
-  const formData = {};
+  let formData = {};
+  let employees;
   const dataTableRef = useRef();
   const employeeApi = useEmployeeApi();
 
@@ -35,15 +36,18 @@ export const Employees = () => {
     try {
       cleanErrors(formData);
       await employeeSchema.validate(formData, { abortEarly: false });
-      alert(JSON.stringify(formData));
+      const employee = await employeeApi.create(formData);
+      employees.push(employee);
+      dataTableRef.current.refreshTable(employees);
       form.reset();
+      formData = {};
     } catch (error) {
       printErrors(extractErrors(error));
     }
   };
 
   const listEmployees = async () => {
-    const employees = await employeeApi.list();
+    employees = await employeeApi.list();
     dataTableRef.current.refreshTable(employees);
   };
 
