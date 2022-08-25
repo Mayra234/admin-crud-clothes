@@ -2,12 +2,6 @@ import { Card } from '../../components/Card';
 import { Input } from '../../components/Input';
 import { Select } from '../../components/Select';
 import { Button } from '../../components/Button';
-import { Table } from '../../components/Table';
-import { TableBody } from '../../components/TableBody';
-import { TableCell } from '../../components/TableCell';
-import { TableHead } from '../../components/TableHead';
-import { TableHeader } from '../../components/TableHeader';
-import { TableRow } from '../../components/TableRow';
 import './index.css';
 import { clotheSchema } from '../../schemas/clotheSchema';
 import { cleanError } from '../../utils/cleanError';
@@ -15,9 +9,14 @@ import { printError } from '../../utils/printError';
 import { cleanErrors } from '../../utils/cleanErrors';
 import { printErrors } from '../../utils/printErrors';
 import { extractErrors } from '../../utils/extractErrors';
+import { useRef } from '../../utils/useRef';
+import { useClotheApi } from '../../apis/useClotheApi';
 
 export const Clothes = () => {
   const formData = {};
+  const dataTableRef = useRef();
+  const clotheApi = useClotheApi();
+
   const setFormData = async (event) => {
     const { name, value } = event.target;
     formData[name] = value;
@@ -41,6 +40,15 @@ export const Clothes = () => {
       printErrors(extractErrors(error));
     }
   };
+
+  const listClothes = async () => {
+    const clothes = await clotheApi.list();
+    dataTableRef.current.refreshTable(clothes);
+  };
+
+  mounted(() => {
+    listClothes();
+  });
 
   return /*html*/ `
   <h4 class='form-element'>Prendas</h4>
@@ -99,41 +107,7 @@ export const Clothes = () => {
       </div>
       </form>
       <div class='container-table'>
-        ${Table({
-          children: `
-          ${TableHead({
-            children: `
-              ${TableRow({
-                children: `
-                ${TableHeader({ toUpperCase: true, children: 'id' })}
-                ${TableHeader({ toUpperCase: true, children: 'compañia' })}
-                ${TableHeader({ toUpperCase: true, children: 'material' })}
-                ${TableHeader({ toUpperCase: true, children: 'nombre' })}
-                ${TableHeader({ toUpperCase: true, children: 'precio' })}
-                ${TableHeader({ toUpperCase: true, children: 'cantidad' })}
-                ${TableHeader({ toUpperCase: true, children: 'acciones' })}
-              `,
-              })}
-            `,
-          })}
-          ${TableBody({
-            children: `
-            ${TableRow({
-              children: `
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-
-            `,
-            })}
-          `,
-          })}
-       `,
-        })}
+        ${DataTable({ ref: dataTableRef })}
       </div> 
     `,
     })}

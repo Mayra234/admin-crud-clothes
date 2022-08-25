@@ -2,7 +2,7 @@ const useClotheApi = () => {
   const baseUrl = LOCAL_BASE_URL;
 
   const list = async () => {
-    const response = await fetch(`${baseURL}/clothes`, { method: 'GET' });
+    const response = await fetch(`${baseUrl}/clothes`, { method: 'GET' });
     return response.json();
   };
 
