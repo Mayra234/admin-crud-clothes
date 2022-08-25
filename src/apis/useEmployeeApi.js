@@ -1,4 +1,6 @@
-const useEmployeeApi = () => {
+import { LOCAL_BASE_URL } from '../constants/baseUrls';
+
+export const useEmployeeApi = () => {
   const baseUrl = LOCAL_BASE_URL;
 
   const list = async () => {

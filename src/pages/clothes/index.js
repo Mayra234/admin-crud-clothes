@@ -9,14 +9,9 @@ import { printError } from '../../utils/printError';
 import { cleanErrors } from '../../utils/cleanErrors';
 import { printErrors } from '../../utils/printErrors';
 import { extractErrors } from '../../utils/extractErrors';
-import { useRef } from '../../utils/useRef';
-import { useClotheApi } from '../../apis/useClotheApi';
 
 export const Clothes = () => {
   const formData = {};
-  const dataTableRef = useRef();
-  const clotheApi = useClotheApi();
-
   const setFormData = async (event) => {
     const { name, value } = event.target;
     formData[name] = value;
@@ -33,22 +28,18 @@ export const Clothes = () => {
     const form = document.getElementById('clothes-form');
     try {
       cleanErrors(formData);
+      formData.companyId = 1;
+      formData.materialId = 1;
       await clotheSchema.validate(formData, { abortEarly: false });
-      alert(JSON.stringify(formData));
+      const clothe = await useClothe.create(formData);
+      clothes.push(clothe);
+      dataTableRef.current.refreshTable(clothes);
       form.reset();
+      formData = {};
     } catch (error) {
       printErrors(extractErrors(error));
     }
   };
-
-  const listClothes = async () => {
-    const clothes = await clotheApi.list();
-    dataTableRef.current.refreshTable(clothes);
-  };
-
-  mounted(() => {
-    listClothes();
-  });
 
   return /*html*/ `
   <h4 class='form-element'>Prendas</h4>

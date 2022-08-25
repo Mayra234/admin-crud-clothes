@@ -12,9 +12,11 @@ import { DataTable } from '../../components/DataTable';
 import { useRef } from '../../utils/useRef';
 import { mounted } from '../../utils/mounted';
 import { useCompanyApi } from '../../apis/useCompanyApi';
+import { ValidationError } from 'yup';
 
 export const Companies = () => {
-  const formData = {};
+  let formData = {};
+  let companies;
   const dataTableRef = useRef();
   const companyApi = useCompanyApi();
 
@@ -31,20 +33,30 @@ export const Companies = () => {
   };
 
   const submit = async () => {
-    const form = document.getElementById('companies-form');
-
     try {
       cleanErrors(formData);
       await companySchema.validate(formData, { abortEarly: false });
-      alert(JSON.stringify(formData));
-      form.reset();
+      const company = await companyApi.create(formData);
+      companies.push(company);
+      dataTableRef.current.refreshTable(companies);
+      reset();
     } catch (error) {
-      printErrors(extractErrors(error));
+      if (error instanceof ValidationError) {
+        printErrors(extractErrors(error));
+      } else {
+        console.error(error);
+      }
     }
   };
 
+  const reset = () => {
+    const form = document.getElementById('companies-form');
+    form.reset();
+    formData = {};
+  };
+
   const listCompanies = async () => {
-    const companies = await companyApi.list();
+    companies = await companyApi.list();
     dataTableRef.current.refreshTable(companies);
   };
 

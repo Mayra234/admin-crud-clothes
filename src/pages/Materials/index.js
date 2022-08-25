@@ -1,21 +1,23 @@
 import { Card } from '../../components/Card';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
-import { Table } from '../../components/Table';
-import { TableBody } from '../../components/TableBody';
-import { TableHead } from '../../components/TableHead';
-import { TableHeader } from '../../components/TableHeader';
-import { TableCell } from '../../components/TableCell';
-import { TableRow } from '../../components/TableRow';
 import { materialSchema } from '../../schemas/materialSchema';
 import { extractErrors } from '../../utils/extractErrors';
 import { cleanError } from '../../utils/cleanError';
 import { printError } from '../../utils/printError';
 import { cleanErrors } from '../../utils/cleanErrors';
 import { printErrors } from '../../utils/printErrors';
+import { useMaterialApi } from '../../apis/useMaterialApi';
+import { useRef } from '../../utils/useRef';
+import { mounted } from '../../utils/mounted';
+import { DataTable } from '../../components/DataTable';
 
 export const Materials = () => {
-  const formData = {};
+  let formData = {};
+  let materials;
+  const dataTableRef = useRef();
+  const useMaterial = useMaterialApi();
+
   const setFormData = async (event) => {
     const { name, value } = event.target;
     formData[name] = value;
@@ -33,12 +35,24 @@ export const Materials = () => {
     try {
       cleanErrors(formData);
       await materialSchema.validate(formData, { abortEarly: false });
-      alert(JSON.stringify(formData));
+      const material = await useMaterial.create(formData);
+      materials.push(material);
+      dataTableRef.current.refreshTable(materials);
       form.reset();
+      formData = {};
     } catch (error) {
       printErrors(extractErrors(error));
     }
   };
+
+  const listMaterials = async () => {
+    materials = await useMaterial.list();
+    dataTableRef.current.refreshTable(materials);
+  };
+
+  mounted(() => {
+    listMaterials();
+  });
 
   return /*html*/ `
    <h4 class='form-element'>Materiales</h4>
@@ -61,32 +75,7 @@ export const Materials = () => {
         })}</div>
       </form>     
       <div class='container-table'>
-        ${Table({
-          children: `
-          ${TableHead({
-            children: `
-              ${TableRow({
-                children: `
-                ${TableHeader({ toUpperCase: true, children: 'id' })}
-                ${TableHeader({ toUpperCase: true, children: 'nombre' })}
-                ${TableHeader({ toUpperCase: true, children: 'Acciones' })}
-              `,
-              })}
-            `,
-          })}
-          ${TableBody({
-            children: `
-            ${TableRow({
-              children: `
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-              ${TableCell({ children: 'Vacio' })}
-            `,
-            })}
-          `,
-          })}
-       `,
-        })}
+        ${DataTable({ ref: dataTableRef })}
       </div> 
     `,
     })}
