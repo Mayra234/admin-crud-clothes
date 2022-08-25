@@ -1,8 +1,6 @@
-@import './assets/libs/fontawesome-free-6.1.1-web/css/all.css';
-
 @font-face {
   font-family: 'nunito';
-  src: url('./assets/fonts/nunito/static/Nunito-SemiBold.ttf');
+  src: url('./assets/fonts/nunito/Nunito-SemiBold.ttf');
 }
 
 * {
